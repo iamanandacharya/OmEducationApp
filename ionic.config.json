@@ -1,5 +1,8 @@
 {
-  "name": "RestaurantApp",
+  "name": "OmEducation",
   "app_id": "",
-  "type": "ionic-angular"
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
 }

@@ -1,18 +1,232 @@
 <ion-header>
   <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Home</ion-title>
+  <div id="loginClick"> <button ion-button end color="danger" (click)="doLogin()">Login</button></div>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h3>Ionic Menu Starter</h3>
+  
+ 
+    <ion-grid>
+      
+    <ion-row>
+      <ion-col  col-12>
+       
+        
+              <div id="menu_content_row1_col1_id">
+              <img src="assets/imgs/photodune-4161018-group-of-students-m.jpg" >
+            
+            </div>
+               
+      </ion-col>
+  
+    
+    </ion-row>
+  </ion-grid>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+          <div id ="signup_offer_id">
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
+              <ion-card-content>
+                  <button ion-button block round color="danger" >SignUp only 15$ only</button>
+                </ion-card-content>
+            </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+
+
+    <div id="feature_id">
+      <h2>Features</h2>
+    </div><br>
+    <div class="feature_content">
+      Learn about all of the features we offer
+    </div>
+
+    <div class="feature_content_1">
+      
+        <ion-card-content>
+          <h2>Offering success orientation for each student</h2><br>
+          <h6>we are committed to provide effective we are committed to provide effective which are<a href="#">&nbsp;&nbsp;more</a></h6>
+        </ion-card-content>
+      
+    </div>
+
+    <div class="feature_content_2">
+        
+          <ion-card-content>
+            <h2>Offering success orientation for each student</h2><br>
+            <h6>we are committed to provide effective we are committed to provide effective which are<a href="#">&nbsp;&nbsp;more</a></h6>
+          </ion-card-content>
+        
+      </div>
+
+      <div class="feature_content_3">
+          
+            <ion-card-content>
+              <h2>Offering success orientation for each student</h2><br>
+              <h6>we are committed to provide effective we are committed to provide effective which are<a href="#">&nbsp;&nbsp;more</a></h6>
+            </ion-card-content>
+          
+        </div>
+
+        <div class="feature_content_4">
+            
+              <ion-card-content>
+                <h2>Offering success orientation for each student</h2><br>
+                <h6>we are committed to provide effective we are committed to provide effective which are<a href="#">&nbsp;&nbsp;more</a></h6>
+              </ion-card-content>
+            
+          </div>
+
+          <div class="feature_content_5">
+              
+                <ion-card-content>
+                  <h2>Offering success orientation for each student</h2><br>
+                  <h6>we are committed to provide effective we are committed to provide effective which are<a href="#">&nbsp;&nbsp;more</a></h6>
+                </ion-card-content>
+              
+            </div>
+
+            <div class="feature_content_6">
+                
+                  <ion-card-content>
+                    <h2>Offering success orientation for each student</h2><br>
+                    <h6>we are committed to provide effective we are committed to provide effective which are<a href="#">&nbsp;&nbsp;more</a></h6>
+                  </ion-card-content>
+                
+              </div>
+
+              <div id="feature_id">
+                  <h2 class="text-display-ITSOFT">Course Category</h2>
+                </div>
+
+                  <div class="card-background-page">
+                   <ion-grid>
+                      <ion-row>
+                    <ion-col col-6>
+                        <ion-card>
+                            
+                                                      <img src="assets/imgs/images.jpg"/>
+                                                      <div class="card-title"><button ion-button clear (click)="itCourceList()">
+                                                        <div id="IT_text_id">IT</div>
+                                                      </button> 
+                                                    </div>
+                                                    </ion-card>
+                                                  
+                    </ion-col>      
+                  <ion-col col-6>
+                      <ion-card>
+                          
+                                                    <img src="assets/imgs/images.jpg"/>
+                                                    <div class="card-title"><button ion-button clear (click)="itCourceList()">
+                                                        <div id="IT_text_id">Business</div>
+                                                      </button> 
+                                                      </div>
+                                                  </ion-card>
+                                            
+                  </ion-col>
+                  </ion-row>  
+                         
+                   </ion-grid>
+                   <ion-grid>
+                      <ion-row>
+                    <ion-col col-6>
+                        <ion-card>
+                            
+                                                      <img src="assets/imgs/images.jpg"/>
+                                                      <div class="card-title"><button ion-button clear (click)="itCourceList()">
+                                                          <div id="IT_text_id">Academic</div>
+                                                        </button> 
+                                                        </div>
+                                                    </ion-card>
+                                                  
+                    </ion-col>      
+                  <ion-col col-6>
+                      <ion-card>
+                          
+                                                    <img src="assets/imgs/images.jpg"/>
+                                                    <div class="card-title"><button ion-button clear (click)="itCourceList()">
+                                                        <div id="IT_text_id">Language</div>
+                                                      </button> 
+                                                      </div>
+                                                  </ion-card>
+                                            
+                  </ion-col>
+                  </ion-row>  
+                         
+                   </ion-grid>
+                      
+                  
+                      </div>
+                     
+                <ion-grid>
+                    <div id="feature_id">
+                        <h2 class="text-display-ITSOFT">Featured Courses</h2>
+                      </div>
+                    <ion-row>
+                       
+                      <ion-col>
+                         
+                
+                              <ion-card-content>
+                <div id="slide_id">
+                    
+                     <!-- //we can also add ionic slide properties  -->
+                      <!-- <ion-slides *ngIf="PImage && PImage.length"  autoplay="5000" loop="true" speed="500" class="slides" pager="true">
+                             -->
+                      <ion-slides pager (ionSlideDidChange)="slideChanged()"  loop="true" effect="slide">
+                        <ion-slide>
+                          <ion-grid>
+                            <ion-row>
+                              <ion-col>
+                                <img src="assets/imgs/css3.jpg" />
+                                <h6 class="text-display-ITSOFT">Top Most Course in IT & Software</h6>
+                                
+                              </ion-col>
+                            </ion-row>
+                          </ion-grid>
+                        </ion-slide>
+                        <ion-slide>
+                          <ion-grid>
+                            <ion-row>
+                              <ion-col>
+                                <img src="assets/imgs/images.jpg" />
+                                <h6 class="text-display-ITSOFT">Top Most Course in IT & Software</h6>
+                                
+                              </ion-col>
+                            </ion-row>
+                          </ion-grid>
+                        </ion-slide>
+                         <ion-slide>
+                          <ion-grid>
+                            <ion-row>
+                              <ion-col>
+                                <img src="assets/imgs/images.jpg" />
+                                <h6 class="text-display-ITSOFT">Top Most Course in IT & Software</h6>
+                                
+                              </ion-col>
+                            </ion-row>
+                          </ion-grid>
+                        </ion-slide>
+                      </ion-slides>
+                    </div>
+                    <button ion-button block  >Browse Course</button>
+                                    </ion-card-content>
+                          </ion-col>
+                        </ion-row>
+                      </ion-grid>
 </ion-content>
+
+<ion-footer no-border >
+  <ion-toolbar>
+  
+    <ion-label><div id="footer_text_id">Learning Version 1.0.0</div></ion-label>
+  
+  </ion-toolbar>
+</ion-footer>
+<ion-nav [root]="rootPage" #content ></ion-nav>
+
+<!--  -->

@@ -1,3 +1,139 @@
 page-home {
 
+    #loginClick{
+        float: right
+    }
+    #IT_text_id{
+        top: 36%;
+        font-size: larger;
+        width: 100%;
+        font-weight: bold;
+        color: #fff;
+        margin-top: -16px;
+    }
+    #signup_offer_id{
+        margin-top: -83px;
+        margin-left: 1px;
+    }
+    #feature_id{
+        text-align: center;
+        margin-top:35px;
+    }
+    .feature_content{
+        text-align: center;
+        color: rgb(119, 119, 119);
+    }
+    .feature_content_1{
+        background-color: rgb(237, 86, 11);
+        margin-top: 35px;
+        font-size: 1.84rem;
+        font-weight: 400;
+        line-height: 2.46rem;
+    }
+    .feature_content_2{
+       background-color:  rgb(13, 221, 218);
+       margin-top: 35px;
+    }
+    .feature_content_3{
+        background-color: rgb(108, 193, 11);
+        margin-top: 35px; 
+    }
+    .feature_content_4{
+        background-color: rgb(244, 203, 19); 
+        margin-top: 35px;
+    }
+    .feature_content_5{
+        background-color: rgb(187, 15, 221); 
+        margin-top: 35px;
+    }
+    .feature_content_6{
+        background-color: rgb(155, 76, 6); 
+        margin-top: 35px;
+    }
+.text-display-ITSOFT{
+    font-size: 1.61rem;
+    font-weight: 400;
+    line-height: 3.07rem;
+}
+
+#footer_text_id{
+    text-align: center
+}
+    #mapcanvas {
+        width: 100%;
+        height: 100%;
+      }
+    #home_page_id{
+        background-color: burlywood
+    }
+    #pickup_dilevery_id{
+    margin-top: 5px;
+    background-color: rgb(111, 111, 224);
+    }
+    #select_location_id{
+        margin-top:6px;
+        background-color: lightblue;
+    }
+    #detect_location_id{
+        margin-top:5px;
+    }
+   
+    #select_rest_id{
+        margin-right: -319px;
+    }
+    #select_city_id{
+        margin-right: -319px;
+        
+    }
+    #addressId{
+        margin-top:5px;
+        background-color: azure;
+    }
+    #menu_offer_id{
+        margin-top: 5px;
+        background-color: lightblue;
+    }
+    #pickup_text_id{
+        text-align: center;
+        color: aliceblue;
+        
+    }
+    #delivery_text_id{
+        @media(min:width480px){
+         text-align: center;
+            color: aliceblue;
+            font-size: 24px;
+       
+        }
+    
+        text-align: center;
+        color: aliceblue;
+   
+    }
+    
+    .card-background-page {
+        
+          ion-card {
+            position: relative;
+            text-align: center;
+          }
+        
+          .card-title {
+            position: absolute;
+            top: 36%;
+            font-size:larger;
+            width: 100%;
+            font-weight: bold;
+            color: #fff;
+          }
+        
+          .card-subtitle {
+            font-size: 1.0em;
+            position: absolute;
+            top: 52%;
+            width: 100%;
+            color: #fff;
+          }
+        
+        }
 }

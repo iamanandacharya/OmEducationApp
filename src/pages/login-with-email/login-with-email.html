@@ -1,0 +1,52 @@
+<!--
+  Generated template for the LoginWithEmailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>LoginWithEmail</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <div id="loginfrom_number_id">
+        <ion-card-content>
+        <div class="login-box">
+          <form >
+              <ion-row>
+                  <ion-col>
+                    <ion-list inset>
+                      <div id="text_id">
+                      <h2>Welcome</h2>
+                      <h6>Login with your Email</h6>
+                    </div>
+                      <ion-item>
+                          <ion-input name="email" placeholder="Enter your Email" full type="text" > </ion-input>
+                          </ion-item>
+                          <ion-item>
+                            <ion-input maxlength="10" name="password" placeholder="Enter your Password" full type="password" > </ion-input>
+                            </ion-item>
+                    </ion-list>
+                  </ion-col>
+                </ion-row>
+                <ion-row>
+                  <ion-col>
+                    <button ion-button full class="submit-btn" (click)="dologin($event)" type="submit">Login</button>
+                  </ion-col>
+                </ion-row>          
+                
+              </form>
+              <ion-row>
+                  <ion-col>
+                    <button ion-button full class="submit-btn" (click)="dologin($event)" type="submit">Forgot password!</button>
+                  </ion-col>
+                </ion-row> 
+         </div>
+        </ion-card-content>
+      </div>
+</ion-content>

@@ -1,0 +1,117 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-title>Learning</ion-title>
+    </ion-toolbar>
+  </ion-header>
+<ion-content class="login-content" padding>
+  <form >
+              <ion-row>
+                  <ion-col>
+                      <ion-item-group>
+                    <ion-list inset>
+                      <div id="text_id">
+                      <h6>Login with your Email</h6>
+                    </div>
+                   
+                      <ion-item>
+                          <ion-input name="email" placeholder="Enter your Email" full type="text" > </ion-input>
+                          </ion-item>
+                          <ion-item>
+                            <ion-input maxlength="10" name="password" placeholder="Enter your Password" full type="password" > </ion-input>
+                            </ion-item>
+                            
+                              <button ion-button full class="submit-btn" (click)="dologin($event)" type="submit">Login</button>
+                              
+                              <button ion-button block class="submit-btn" (click)="dologin($event)" type="submit">Forgot password!</button>
+                              
+                            </ion-list>
+                    
+                              </ion-item-group>
+                             
+                  </ion-col>
+                        
+                </ion-row>
+              </form>
+              
+<div id="card-content-id">
+<div id="social_accnt_id">
+ 
+        <div id="social_accnt_text_or_Id">
+            <ion-label>--OR--</ion-label> 
+          </div>
+          <div id="social_accnt_text_or_Id">
+              <ion-label>Login via social account</ion-label> 
+            </div>
+         <ion-item-group>
+          <ion-item>
+              <!-- Play icon -->
+                 <button ion-button color="danger" class="submit-btn" item-start type="submit"(click)="onGoogleLogin()" >  <ion-icon name="logo-google"></ion-icon>&nbsp;Google</button>
+                        <div class="butoon-contents">
+                            <button ion-button  class="submit-btn" type="submit"(click)="onFacebookLogin()" > <ion-icon name="logo-facebook"></ion-icon>&nbsp;Facebook</button>
+                          </div>
+              <!-- check mark circle  icon --> 
+              <button ion-button item-end  color="dark" class="submit-btn"  type="submit"(click)="trueCaller($event)" > <ion-icon name="logo-twitter"></ion-icon>&nbsp;Twitter</button>
+            </ion-item>
+          </ion-item-group>
+        <!-- <ion-row>
+              <ion-col>
+                  <button ion-button color="danger" class="submit-btn" full type="submit"(click)="onGoogleLogin()" >  <ion-icon name="logo-google"></ion-icon>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Login Via Google</button>
+              </ion-col>
+            </ion-row>  
+                
+        <ion-row>
+          <ion-col>
+              <button ion-button  class="submit-btn" full type="submit"(click)="onFacebookLogin()" > <ion-icon name="logo-facebook"></ion-icon>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Login Via Facebook</button>
+          </ion-col>
+        </ion-row>  
+            
+        <ion-row>
+          <ion-col>
+              <button ion-button color="dark" class="submit-btn" full type="submit"(click)="trueCaller($event)" > <ion-icon name="logo-twitter"></ion-icon>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Login Via Twitter</button>
+          </ion-col>
+        </ion-row>          
+    </ion-card-content>
+    <ion-card-content>
+            <ion-row>
+      <ion-col>
+          <button ion-button item-start color="dark" class="submit-btn"  type="submit"(click)="trueCaller($event)" > <ion-icon name="logo-twitter"></ion-icon>F</button>
+          <button ion-button color="dark" class="submit-btn"  type="submit"(click)="trueCaller($event)" > <ion-icon name="logo-twitter"></ion-icon>T</button>
+          <button ion-button item-end  color="dark" class="submit-btn"  type="submit"(click)="trueCaller($event)" > <ion-icon name="logo-twitter"></ion-icon>G+</button>
+          
+        </ion-col>
+     
+    </ion-row>      
+    
+</ion-card-content> -->
+
+    </div>
+    <ion-card-content class="acount_class">
+    <ion-row>
+      <ion-col>
+        <div id="social_accnt_text-Id">
+            <ion-label>Dont have an account?</ion-label> 
+          </div>
+        </ion-col>
+        <ion-col>
+          <button ion-button full class="submit-btn" (click)="doSign()" type="submit">signup</button>
+        </ion-col>
+        <ion-col>
+            <button ion-button class="submit-btn" color="danger" full type="submit"(click)="browseCource()" >Browse Cource </button>
+          </ion-col>
+      </ion-row>  
+  
+</ion-card-content>
+<ion-card-content>
+    <ion-row>
+   
+      </ion-row>  
+      </ion-card-content>
+</div>
+
+
+ 
+
+
+</ion-content>
+
+<ion-nav [root]="rootPage" #content ></ion-nav>

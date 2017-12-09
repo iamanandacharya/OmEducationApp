@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button clear>
+     
+      <ion-icon ios="ios-arrow-back"  (click)="onBack($event)"></ion-icon>
+    </button>
+  </ion-navbar>
+</ion-header>
+<ion-content  padding>
+    <ion-row class="logo-row">
+      <ion-col></ion-col>
+      <ion-col width-67>
+        
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+    <div id="otp_card_id">
+    <ion-card-content>
+     <div id="forgot_password_text_id"> <ion-title>Forgot Password</ion-title></div>
+    <div class="login-box">
+          <ion-row>
+              <ion-col>
+                <ion-list inset>
+                  <ion-item>
+                    <ion-input name="number"type="number" placeholder="Enter Your Email-Id"></ion-input>
+                  </ion-item>
+                </ion-list>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col>
+                  <button ion-button color="danger" class="submit-btn"(click)="dootp($event)" full type="submit">Submit</button><br>
+              </ion-col>
+            </ion-row>          
+     </div>
+        </ion-card-content>
+  </div>
+    </ion-content>

@@ -1,0 +1,32 @@
+page-course-content {
+    .videowrapper {
+        float: none;
+        clear: both;
+        width: 100%;
+        position: relative;
+        padding-bottom: 56.25%;
+        padding-top: 25px;
+        height: 0;
+        background-color: #000000;
+    }
+    .videowrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .course_contetn_subclass{
+        background-color: white;
+    }
+    .class_content_box_1{
+        font-weight: 500;
+        line-height: 1.84rem;
+        font-size: small;
+    }
+    .class_content_box_2{
+        font-weight: 500;
+        line-height: 1.84rem;
+        font-size: small;
+    }
+}

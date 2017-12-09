@@ -1,0 +1,208 @@
+<!--
+  Generated template for the MenuPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+   
+
+      <button ion-button clear> 
+          <ion-icon ios="ios-arrow-back" md="md-arrow-back" (click)="goBack()" ></ion-icon>
+
+          <ion-title> Restaurant</ion-title>
+        </button>
+        
+     
+
+</ion-header>
+
+
+<ion-content padding>
+  <!-- //sliders -->
+<div id="slide_id">
+
+ <!-- //we can also add ionic slide properties  -->
+  <!-- <ion-slides *ngIf="PImage && PImage.length"  autoplay="5000" loop="true" speed="500" class="slides" pager="true">
+         -->
+  <ion-slides pager (ionSlideDidChange)="slideChanged()"  loop="true" effect="slide">
+    <ion-slide>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <img src="assets/imgs/large.jpg" />
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-slide>
+    <ion-slide>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <img src="assets/imgs/large.jpg" />
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-slide>
+     <ion-slide>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <img src="assets/imgs/large.jpg" />
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-slide>
+  </ion-slides>
+</div>
+
+<ion-grid>
+  <ion-row>
+    <ion-col col-6 col-sm>
+      <ion-list>
+          <ion-item>
+              <img src="assets/imgs/O66RJG0.jpg">
+            <div id="pizza_card_id">
+              <button ion-button clear  large (click)="openPizzaMenu()"> 
+             
+                 <div id="text_id"><h6> Pizaa</h6></div>
+              </button>
+              </div>
+               
+                </ion-item>
+         
+        </ion-list>
+     
+  </ion-col>
+<ion-col col-6 col-sm>
+    <ion-list>
+        <ion-item>
+            
+            <img src="assets/imgs/42281-hi-drinks.jpg">
+          <div id="pizza_card_id">
+          
+            <button ion-button clear  large (click)="openPizzaMenu()"> 
+                <div id="text__cold_id"><h6>Drinks</h6></div>
+           
+            </button>
+              
+            </div>
+              </ion-item>
+            
+      </ion-list>
+   
+</ion-col>
+
+  </ion-row>
+</ion-grid>
+<ion-grid>
+    <ion-row>
+      <ion-col col-6 col-sm>
+        <ion-list>
+            <ion-item>
+                <img src="assets/imgs/shrimp_salad.jpg">
+              <div id="pizza_card_id">
+                <button ion-button clear  large (click)="openPizzaMenu()"> 
+               
+                   <div id="text_id"><h6>Slides</h6></div>
+                </button>
+                </div>
+                 
+                  </ion-item>
+           
+          </ion-list>
+       
+    </ion-col>
+  <ion-col col-6 col-sm>
+      <ion-list>
+          <ion-item>
+              
+              <img src="assets/imgs/shrimp_salad.jpg">
+            <div id="pizza_card_id">
+            
+              <button ion-button clear  large (click)="openPizzaMenu()"> 
+                  <div id="text__cold_id"><h6>Drinks</h6></div>
+             
+              </button>
+                
+              </div>
+                </ion-item>
+              
+        </ion-list>
+     
+  </ion-col>
+  
+    </ion-row>
+  </ion-grid>
+  
+
+  <ion-grid>
+    <div id="Menu_content_row1_id">
+  <ion-row>
+    <ion-col  col-xs>
+        
+      <ion-card>
+          
+      <ion-list>
+        <ion-item>
+            <div id="menu_content_row1_col1_id">
+            <img src="assets/imgs/large.jpg">
+          
+           <ion-card-content>
+            <div id="pizz_button_id">
+            <button ion-button clear  large (click)="openPizzaMenu()"> 
+           
+              <div id="menu_label_id_1">  
+                Pizaa
+              </div>
+            </button>
+          </div>
+              </ion-card-content>
+              <button ion-button icon-left clear small>
+                  <ion-icon name="thumbs-up"></ion-icon>
+                  <div>12 Likes</div>
+                </button>
+                
+               
+                  <button ion-button icon-left clear small id="menu_content_row1_col1_comment_id">
+                      
+                      <ion-icon name="text"></ion-icon>
+                      <div>4 Comments</div>
+                   
+                    
+                   </button>
+                  </div>
+              </ion-item>
+       
+      </ion-list>
+   
+    </ion-card>
+ 
+    </ion-col>
+</ion-row>
+
+</div>
+</ion-grid>
+
+
+
+<ion-grid>
+    
+  <ion-row>
+    <ion-col  col-12>
+     
+      
+            <div id="menu_content_row1_col1_id">
+            <img src="assets/imgs/large.jpg">
+          
+        
+                 </div>
+             
+    </ion-col>
+
+  
+  </ion-row>
+</ion-grid>
+    
+</ion-content>

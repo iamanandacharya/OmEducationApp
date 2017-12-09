@@ -1,0 +1,73 @@
+<ion-header>
+    <ion-navbar>
+      <button ion-button menuToggle  >
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Learning</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+<ion-content class="login-content" padding>
+  <ion-row class="logo-row">
+  
+    <ion-col>
+      <div id="register_text_id">Create Account</div>
+    </ion-col>
+  </ion-row>
+
+
+  <div class="login-box">
+    <form (ngSubmit)="register()" #registerForm="ngForm">
+      <ion-row>
+        <ion-col>
+          <ion-list>
+            
+            <ion-item>
+              <ion-input type="text" placeholder="First Name" name="mobNumber" required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input type="text" placeholder="Last Name"  name="firstName"  required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-input    type= "text" placeholder="Email" name="email" required></ion-input>
+              </ion-item>
+              <ion-item>
+              <ion-input type="text" placeholder="Password"  name="password" required>   
+              </ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-input  type="text" placeholder="Re-Password" name="rePassword" required></ion-input>
+              </ion-item>
+            <ion-item>
+              <ion-label>* I Agree with Terms & conditions!</ion-label>
+              <ion-checkbox checked="false"></ion-checkbox>
+             
+            </ion-item>
+           
+          </ion-list>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <button ion-button full class="submit-btn"  type="submit">Create an Account</button>
+        </ion-col>
+      </ion-row> 
+      <ion-card-content>
+          <ion-row>
+            <ion-col>
+              <div id="social_accnt_text-Id">
+                  <ion-label>Dont have an account?</ion-label> 
+                </div>
+              </ion-col>
+              <ion-col>
+                <button ion-button full class="submit-btn" color="Danger" (click)="dologin($event)" type="submit">Login</button>
+              </ion-col>
+            </ion-row>  
+        
+      </ion-card-content>
+      
+    </form>
+ 
+  
+  </div>
+</ion-content>

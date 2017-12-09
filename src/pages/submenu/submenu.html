@@ -1,0 +1,480 @@
+<!--
+  Generated template for the SubmenuPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+    <button ion-button icon-only menuToggle>
+      <ion-icon name="menu" side="right"></ion-icon>
+    </button>
+ 
+
+</ion-header>
+
+
+<ion-content padding>
+  
+<div padding>
+    <ion-segment disabled="false" [(ngModel)]="food">
+      <ion-segment-button value="pizza">
+        Pizza
+      </ion-segment-button>
+      <ion-segment-button value="slides">
+        Slides
+      </ion-segment-button>
+      <ion-segment-button value="drinks">
+          Drinks
+        </ion-segment-button>
+    </ion-segment>
+  </div>
+
+
+  <div id="pizza_segment_id">
+  <ion-card>
+  <div [ngSwitch]="food" >
+    <ion-list *ngSwitchCase="'pizza'">
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="assets/imgs/5.jpg">
+        </ion-thumbnail>
+        
+        <h2>American-Heat</h2>
+        <h2>₹140.00 – ₹320.00</h2>
+        <h3>
+            Extra-virgin olive oil,mozzarella cheese,<br>
+            thinly-sliced steak meat,<br>
+            garlic,green peppers,<br>
+             mushrooms,tomatoes<br>
+         </h3>
+         <button ion-button icon-left clear small>
+            <ion-icon name="heart" color="danger">&nbsp;13 Likes</ion-icon>
+          </button>
+          <button ion-button clear (click)="open_arrow_button()">
+              <ion-icon name="arrow-dropdown"></ion-icon>
+          </button><br>
+      </ion-item>
+    <ion-card *ngIf="butoonClicked">
+        
+        <ion-item >
+          <ion-row>
+            <ion-col col-4> 
+          Delivery in:  
+        </ion-col>
+        <ion-col col-8>
+           <div id="min_id"> 45 minutes</div> 
+          </ion-col>
+        </ion-row>
+        </ion-item>
+    <ion-item >
+        <ion-label>Select Crust</ion-label>
+        <ion-select [(ngModel)]="crust"  multiple="false"  cancelText="Nah" okText="Okay!" >
+          <ion-option value="regular_crust">Regular Crust</ion-option>
+          <ion-option value="thin_crust">Thin Crust</ion-option>
+        </ion-select>
+        
+      </ion-item>
+      <ion-item >
+          <ion-label>Select Size</ion-label>
+          <ion-select [(ngModel)]="pizza_size"  multiple="false"  cancelText="Nah" okText="Okay!" >
+            
+            <ion-option value="regular">Regular</ion-option>
+            <ion-option value="medium">Medium</ion-option>
+            <ion-option value="large">Large</ion-option>
+          </ion-select>
+          
+        </ion-item><br>
+       
+          <ion-item >
+        <h3>Quantity</h3>
+              <ion-icon name="add"  (click)="increment()"></ion-icon>
+              {{currentNumber}}
+              <ion-icon name="remove" (click)="decrement()"></ion-icon>
+            
+          </ion-item>
+          
+       <br>
+
+          <ion-item >
+            <div id="cart_button_Id">
+            <button ion-button large (click)="addToCart()">
+              <ion-icon left name="cart">Add to cart </ion-icon>
+            </button>
+            </div>
+            
+          
+          </ion-item><br>
+          <ion-item >
+              <div id="close_menu_icon_button">
+              <button ion-button clear (click)="closeMenu()">
+                <ion-icon left name="arrow-dropup"></ion-icon>
+              </button>
+            </div>
+            </ion-item>
+          </ion-card>
+    </ion-list>
+  
+  
+  </div>
+</ion-card>
+
+<ion-card>
+    <div [ngSwitch]="food" >
+      <ion-list *ngSwitchCase="'pizza'">
+        <ion-item>
+          <ion-thumbnail item-start>
+            <img src="assets/imgs/5.jpg">
+          </ion-thumbnail>
+          
+          <h2>American-Heat</h2>
+          <h2>₹140.00 – ₹320.00</h2>
+          <h3>
+              Extra-virgin olive oil,mozzarella cheese,<br>
+              thinly-sliced steak meat,<br>
+              garlic,green peppers,<br>
+               mushrooms,tomatoes<br>
+           </h3>
+           <button ion-button icon-left clear small>
+              <ion-icon name="heart" color="danger">&nbsp;13 Likes</ion-icon>
+            </button>
+            <button ion-button clear (click)="open_arrow_button()">
+                <ion-icon name="arrow-dropdown"></ion-icon>
+            </button><br>
+        </ion-item>
+      <ion-card *ngIf="butoonClicked">
+          
+          <ion-item >
+            <ion-row>
+              <ion-col col-4> 
+            Delivery in:  
+          </ion-col>
+          <ion-col col-8>
+             <div id="min_id"> 45 minutes</div> 
+            </ion-col>
+          </ion-row>
+          </ion-item>
+      <ion-item >
+          <ion-label>Select Crust</ion-label>
+          <ion-select [(ngModel)]="crust"  multiple="false"  cancelText="Nah" okText="Okay!" >
+            <ion-option value="regular_crust">Regular Crust</ion-option>
+            <ion-option value="thin_crust">Thin Crust</ion-option>
+          </ion-select>
+          
+        </ion-item>
+        <ion-item >
+            <ion-label>Select Size</ion-label>
+            <ion-select [(ngModel)]="pizza_size"  multiple="false"  cancelText="Nah" okText="Okay!" >
+              
+              <ion-option value="regular">Regular</ion-option>
+              <ion-option value="medium">Medium</ion-option>
+              <ion-option value="large">Large</ion-option>
+            </ion-select>
+            
+          </ion-item><br>
+         
+            <ion-item >
+          <h3>Quantity</h3>
+                <ion-icon name="add"  (click)="increment()"></ion-icon>
+                {{currentNumber}}
+                <ion-icon name="remove" (click)="decrement()"></ion-icon>
+              
+            </ion-item>
+            
+         <br>
+  
+            <ion-item >
+              <div id="cart_button_Id">
+              <button ion-button large (click)="addToCart()">
+                <ion-icon left name="cart">Add to cart </ion-icon>
+              </button>
+              </div>
+              
+            
+            </ion-item><br>
+            <ion-item >
+                <div id="close_menu_icon_button">
+                <button ion-button clear (click)="closeMenu()">
+                  <ion-icon left name="arrow-dropup"></ion-icon>
+                </button>
+              </div>
+              </ion-item>
+            </ion-card>
+      </ion-list>
+    
+    
+    </div>
+  </ion-card>
+  <ion-card>
+      <div [ngSwitch]="food" >
+        <ion-list *ngSwitchCase="'pizza'">
+          <ion-item>
+            <ion-thumbnail item-start>
+              <img src="assets/imgs/5.jpg">
+            </ion-thumbnail>
+            
+            <h2>American-Heat</h2>
+            <h2>₹140.00 – ₹320.00</h2>
+            <h3>
+                Extra-virgin olive oil,mozzarella cheese,<br>
+                thinly-sliced steak meat,<br>
+                garlic,green peppers,<br>
+                 mushrooms,tomatoes<br>
+             </h3>
+             <button ion-button icon-left clear small>
+                <ion-icon name="heart" color="danger">&nbsp;13 Likes</ion-icon>
+              </button>
+              <button ion-button clear (click)="open_arrow_button()">
+                  <ion-icon name="arrow-dropdown"></ion-icon>
+              </button><br>
+          </ion-item>
+        <ion-card *ngIf="butoonClicked">
+            
+            <ion-item >
+              <ion-row>
+                <ion-col col-4> 
+              Delivery in:  
+            </ion-col>
+            <ion-col col-8>
+               <div id="min_id"> 45 minutes</div> 
+              </ion-col>
+            </ion-row>
+            </ion-item>
+        <ion-item >
+            <ion-label>Select Crust</ion-label>
+            <ion-select [(ngModel)]="crust"  multiple="false"  cancelText="Nah" okText="Okay!" >
+              <ion-option value="regular_crust">Regular Crust</ion-option>
+              <ion-option value="thin_crust">Thin Crust</ion-option>
+            </ion-select>
+            
+          </ion-item>
+          <ion-item >
+              <ion-label>Select Size</ion-label>
+              <ion-select [(ngModel)]="pizza_size"  multiple="false"  cancelText="Nah" okText="Okay!" >
+                
+                <ion-option value="regular">Regular</ion-option>
+                <ion-option value="medium">Medium</ion-option>
+                <ion-option value="large">Large</ion-option>
+              </ion-select>
+              
+            </ion-item><br>
+           
+              <ion-item >
+            <h3>Quantity</h3>
+                  <ion-icon name="add"  (click)="increment()"></ion-icon>
+                  {{currentNumber}}
+                  <ion-icon name="remove" (click)="decrement()"></ion-icon>
+                
+              </ion-item>
+              
+           <br>
+    
+              <ion-item >
+                <div id="cart_button_Id">
+                <button ion-button large (click)="addToCart()">
+                  <ion-icon left name="cart">Add to cart </ion-icon>
+                </button>
+                </div>
+                
+              
+              </ion-item><br>
+              <ion-item >
+                  <div id="close_menu_icon_button">
+                  <button ion-button clear (click)="closeMenu()">
+                    <ion-icon left name="arrow-dropup"></ion-icon>
+                  </button>
+                </div>
+                </ion-item>
+              </ion-card>
+        </ion-list>
+      
+      
+      </div>
+    </ion-card>
+  </div>
+  
+  
+<div id="slides_segment_id">
+                  <ion-card>
+                      <div [ngSwitch]="food" >
+                        <ion-list *ngSwitchCase="'slides'">
+                          <ion-item>
+                            <ion-thumbnail item-start>
+                              <img src="assets/imgs/large.jpg">
+                            </ion-thumbnail>
+                            
+                            <h2>American-Heat</h2>
+                            <h2>₹140.00 – ₹320.00</h2>
+                            <h3>
+                                Extra-virgin olive oil,mozzarella cheese,<br>
+                                thinly-sliced steak meat,<br>
+                                garlic,green peppers,<br>
+                                 mushrooms,tomatoes<br>
+                             </h3>
+                             <button ion-button icon-left clear small>
+                                <ion-icon name="heart" color="danger">&nbsp;13 Likes</ion-icon>
+                              </button>
+                              <button ion-button clear (click)="open_arrow_button()">
+                                  <ion-icon name="arrow-dropdown"></ion-icon>
+                              </button><br>
+                          </ion-item>
+                        <ion-card *ngIf="butoonClicked">
+                            
+                            <ion-item >
+                              <ion-row>
+                                <ion-col col-4> 
+                              Delivery in:  
+                            </ion-col>
+                            <ion-col col-8>
+                               <div id="min_id"> 45 minutes</div> 
+                              </ion-col>
+                            </ion-row>
+                            </ion-item>
+                        <ion-item >
+                            <ion-label>Select Crust</ion-label>
+                            <ion-select [(ngModel)]="crust"  multiple="false"  cancelText="Nah" okText="Okay!" >
+                              <ion-option value="regular_crust">Regular Crust</ion-option>
+                              <ion-option value="thin_crust">Thin Crust</ion-option>
+                            </ion-select>
+                            
+                          </ion-item>
+                          <ion-item >
+                              <ion-label>Select Size</ion-label>
+                              <ion-select [(ngModel)]="pizza_size"  multiple="false"  cancelText="Nah" okText="Okay!" >
+                                
+                                <ion-option value="regular">Regular</ion-option>
+                                <ion-option value="medium">Medium</ion-option>
+                                <ion-option value="large">Large</ion-option>
+                              </ion-select>
+                              
+                            </ion-item><br>
+                           
+                              <ion-item >
+                            <h3>Quantity</h3>
+                                  <ion-icon name="add"  (click)="increment()"></ion-icon>
+                                  {{currentNumber}}
+                                  <ion-icon name="remove" (click)="decrement()"></ion-icon>
+                                
+                              </ion-item>
+                              
+                           <br>
+                    
+                              <ion-item >
+                                <div id="cart_button_Id">
+                                <button ion-button large (click)="addToCart()">
+                                  <ion-icon left name="cart">Add to cart </ion-icon>
+                                </button>
+                                </div>
+                                
+                              
+                              </ion-item><br>
+                              <ion-item >
+                                  <div id="close_menu_icon_button">
+                                  <button ion-button clear (click)="closeMenu()">
+                                    <ion-icon left name="arrow-dropup"></ion-icon>
+                                  </button>
+                                </div>
+                                </ion-item>
+                              </ion-card>
+                        </ion-list>
+                      
+                      
+                      </div>
+                    </ion-card>
+                  </div>
+<!-- Drinks Segment
+
+
+
+
+-->
+<div id="drinks_segment-id">
+                      <ion-card>
+                          <div [ngSwitch]="food" >
+                            <ion-list *ngSwitchCase="'drinks'">
+                              <ion-item>
+                                <ion-thumbnail item-start>
+                                  <img src="assets/imgs/42281-hi-drinks.jpg">
+                                </ion-thumbnail>
+                                
+                                <h2>American-Heat</h2>
+                                <h2>₹140.00 – ₹320.00</h2>
+                                <h3>
+                                    Extra-virgin olive oil,mozzarella cheese,<br>
+                                    thinly-sliced steak meat,<br>
+                                    garlic,green peppers,<br>
+                                     mushrooms,tomatoes<br>
+                                 </h3>
+                                 <button ion-button icon-left clear small>
+                                    <ion-icon name="heart" color="danger">&nbsp;13 Likes</ion-icon>
+                                  </button>
+                                  <button ion-button clear (click)="open_arrow_button()">
+                                      <ion-icon name="arrow-dropdown"></ion-icon>
+                                  </button><br>
+                              </ion-item>
+                            <ion-card *ngIf="butoonClicked">
+                                
+                                <ion-item >
+                                  <ion-row>
+                                    <ion-col col-4> 
+                                  Delivery in:  
+                                </ion-col>
+                                <ion-col col-8>
+                                   <div id="min_id"> 45 minutes</div> 
+                                  </ion-col>
+                                </ion-row>
+                                </ion-item>
+                            <ion-item >
+                                <ion-label>Select Crust</ion-label>
+                                <ion-select [(ngModel)]="crust"  multiple="false"  cancelText="Nah" okText="Okay!" >
+                                  <ion-option value="regular_crust">Regular Crust</ion-option>
+                                  <ion-option value="thin_crust">Thin Crust</ion-option>
+                                </ion-select>
+                                
+                              </ion-item>
+                              <ion-item >
+                                  <ion-label>Select Size</ion-label>
+                                  <ion-select [(ngModel)]="pizza_size"  multiple="false"  cancelText="Nah" okText="Okay!" >
+                                    
+                                    <ion-option value="regular">Regular</ion-option>
+                                    <ion-option value="medium">Medium</ion-option>
+                                    <ion-option value="large">Large</ion-option>
+                                  </ion-select>
+                                  
+                                </ion-item><br>
+                               
+                                  <ion-item >
+                                <h3>Quantity</h3>
+                                      <ion-icon name="add"  (click)="increment()"></ion-icon>
+                                      {{currentNumber}}
+                                      <ion-icon name="remove" (click)="decrement()"></ion-icon>
+                                    
+                                  </ion-item>
+                                  
+                               <br>
+                        
+                                  <ion-item >
+                                    <div id="cart_button_Id">
+                                    <button ion-button large (click)="addToCart()">
+                                      <ion-icon left name="cart">Add to cart </ion-icon>
+                                    </button>
+                                    </div>
+                                    
+                                  
+                                  </ion-item><br>
+                                  <ion-item >
+                                      <div id="close_menu_icon_button">
+                                      <button ion-button clear (click)="closeMenu()">
+                                        <ion-icon left name="arrow-dropup"></ion-icon>
+                                      </button>
+                                    </div>
+                                    </ion-item>
+                                  </ion-card>
+                            </ion-list>
+                          
+                          
+                          </div>
+                        </ion-card>
+                      </div>    
+            
+</ion-content>

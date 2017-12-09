@@ -1,0 +1,176 @@
+<!--
+  Generated template for the CourseOverviewPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>CourseOverviewPage</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="course_content_class">
+
+    <div class ="videowrapper">
+        <iframe [src]="updateVideoUrl(video_id)" frameborder="0" allowfullscreen="" width="320" height="480"></iframe>
+      </div>
+      <button ion-button block (click)="watchVideo(video_id)" >click</button>
+  <div id="course_id">
+   <h1>The MVC Architecture Pattern</h1>
+   
+   <div class="course_contetn_subclass">
+     Model–view–controller (MVC) is a software architectural pattern
+      for implementing user interfaces on computers. It divides a given 
+      application into three interconnected parts. This is done to separate 
+      internal representations of information from the ways information is
+       presented to, and accepted from, the user.
+     The MVC design pattern decouples these major components allowing for 
+     efficient code reuse and parallel development.
+   </div>
+   <h6>Curriculum</h6>
+   <ion-card-content class="course_contetn_back_subclass">
+<ion-item-group>
+  <ion-item-divider color="light">    
+      <div class="class_content_box_1">Chapyer 1</div>
+     <button ion-button item-end clear *ngIf="check_status_open"  (click)="openCourse()">  
+       <ion-icon ios="ios-arrow-dropdown" md="md-arrow-dropdown"></ion-icon>
+    </button> 
+  
+   
+  </ion-item-divider>
+  <div *ngIf="button_clicked">
+  <ion-item>
+         <!-- Play icon -->
+         <ion-icon item-start name="play"></ion-icon>         
+         <div class="class_content_box_1">1.Installation</div> 
+
+         <!-- check mark circle  icon --> 
+         <ion-icon item-end ios="ios-checkmark-circle" md="md-checkmark-circle"></ion-icon>
+         
+        </ion-item>
+        <ion-item>
+            <!-- Play icon -->
+            <ion-icon item-start name="play"></ion-icon>         
+            <div class="class_content_box_1">2.The MVC Architecture<br>Pattern</div> 
+   
+            <!-- check mark circle  icon --> 
+            <ion-icon item-end ios="ios-checkmark-circle" md="md-checkmark-circle"></ion-icon>
+           </ion-item>
+           <ion-item>
+              <!-- Play icon -->
+              <ion-icon item-start name="play"></ion-icon>         
+              <div class="class_content_box_1">3.Database Model</div> 
+     
+              <!-- check mark circle  icon --> 
+              <ion-icon item-end ios="ios-checkmark-circle" md="md-checkmark-circle"></ion-icon>
+             </ion-item>
+             <ion-item>
+                <!-- Play icon -->
+                <ion-icon item-start name="play"></ion-icon>         
+                <div class="class_content_box_1">4.Database Access</div> 
+       
+                <!-- check mark circle  icon --> 
+                <ion-icon item-end ios="ios-checkmark-circle" md="md-checkmark-circle"></ion-icon>
+               </ion-item>
+               <ion-item>
+                  <!-- Play icon -->
+                  <ion-icon item-start name="play"></ion-icon>         
+                  <div class="class_content_box_1">5.Database Model</div> 
+         
+                  <!-- check mark circle  icon --> 
+                  <ion-icon item-end ios="ios-checkmark-circle" md="md-checkmark-circle"></ion-icon>
+                 </ion-item>
+        <ion-item>
+            <!-- Play icon -->
+            <ion-icon item-start name="play"></ion-icon> 
+            <span>        
+            <div class="class_content_box_2">6.The MVC Architecture <br> Pattern</div>
+          </span>
+            <!-- Un check mark icon --> 
+            <ion-icon ios="ios-close-circle" md="md-close-circle" item-end></ion-icon>
+           </ion-item>
+          <ion-item>
+              <button ion-button item-end clear  (click)="closeCourse()">  
+                  <ion-icon ios="ios-arrow-dropup" md="md-arrow-dropup"></ion-icon>
+               </button>
+          </ion-item>
+         
+          </div>
+         
+</ion-item-group>
+<ion-item-group>
+    <ion-item-divider color="light">    
+        <div class="class_content_box_1">Chapyer 1</div>
+       <button ion-button item-end clear *ngIf="check_status_open_1"  (click)="openCourse2()">  
+         <ion-icon ios="ios-arrow-dropdown" md="md-arrow-dropdown"></ion-icon>
+      </button> 
+    
+     
+    </ion-item-divider>
+    <div *ngIf="button_clicked_1">
+    <ion-item>
+           <!-- Play icon -->
+           <ion-icon item-start name="play"></ion-icon>         
+           <div class="class_content_box_1">1.Installation</div> 
+  
+           <!-- check mark circle  icon --> 
+           <ion-icon item-end ios="ios-checkmark-circle" md="md-checkmark-circle"></ion-icon>
+           
+          </ion-item>
+          <ion-item>
+              <!-- Play icon -->
+              <ion-icon item-start name="play"></ion-icon>         
+              <div class="class_content_box_1">2.The MVC Architecture<br>Pattern</div> 
+     
+              <!-- check mark circle  icon --> 
+              <ion-icon item-end ios="ios-checkmark-circle" md="md-checkmark-circle"></ion-icon>
+             </ion-item>
+             <ion-item>
+                <!-- Play icon -->
+                <ion-icon item-start name="play"></ion-icon>         
+                <div class="class_content_box_1">3.Database Model</div> 
+       
+                <!-- check mark circle  icon --> 
+                <ion-icon item-end ios="ios-checkmark-circle" md="md-checkmark-circle"></ion-icon>
+               </ion-item>
+               <ion-item>
+                  <!-- Play icon -->
+                  <ion-icon item-start name="play"></ion-icon>         
+                  <div class="class_content_box_1">4.Database Access</div> 
+         
+                  <!-- check mark circle  icon --> 
+                  <ion-icon item-end ios="ios-checkmark-circle" md="md-checkmark-circle"></ion-icon>
+                 </ion-item>
+                 <ion-item>
+                    <!-- Play icon -->
+                    <ion-icon item-start name="play"></ion-icon>         
+                    <div class="class_content_box_1">5.Database Model</div> 
+           
+                    <!-- check mark circle  icon --> 
+                    <ion-icon item-end ios="ios-checkmark-circle" md="md-checkmark-circle"></ion-icon>
+                   </ion-item>
+          <ion-item>
+              <!-- Play icon -->
+              <ion-icon item-start name="play"></ion-icon> 
+              <span>        
+              <div class="class_content_box_2">6.The MVC Architecture <br> Pattern</div>
+            </span>
+              <!-- Un check mark icon --> 
+              <ion-icon ios="ios-close-circle" md="md-close-circle" item-end></ion-icon>
+             </ion-item>
+            <ion-item>
+                <button ion-button item-end clear  (click)="closeCourse2()">  
+                    <ion-icon ios="ios-arrow-dropup" md="md-arrow-dropup"></ion-icon>
+                 </button>
+            </ion-item>
+           
+            </div>
+           
+  </ion-item-group>
+</ion-card-content>
+  </div>
+</ion-content>
