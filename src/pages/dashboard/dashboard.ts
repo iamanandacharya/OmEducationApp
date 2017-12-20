@@ -47,7 +47,7 @@ export class DashboardPage {
     this.navCtrl.push(ProfilePage)
   }
   onHome(){
-    this.navCtrl.push(HomePage)
+    this.navCtrl.push(DashboardPage)
   }
   openAllCources(){
     this.navCtrl.push(StudentCourseListPage)

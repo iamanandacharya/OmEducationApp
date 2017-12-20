@@ -3,7 +3,7 @@
     <name>Om Education</name>
     <description>An awesome Ionic/Cordova app.</description>
     <author email="hi@ionicframework" href="http://ionicframework.com/">Ionic Framework Team</author>
-    <content original-src="index.html" src="http://192.168.0.103:8100" />
+    <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
@@ -110,4 +110,5 @@
     <plugin name="cordova-plugin-youtube-video-player" spec="^1.0.6" />
     <plugin name="cordova-plugin-advanced-http" spec="^1.9.0" />
     <plugin name="cordova-plugin-email-composer" spec="^0.8.11" />
+    <plugin name="com.hutchind.cordova.plugins.streamingmedia" spec="~0.1.4" />
 </widget>

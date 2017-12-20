@@ -30,7 +30,8 @@ export class ByeNowPage {
   selectPayMethod(){
     this.navCtrl.push(AddVisaCardDetailsPage)
   }
-  clickPaypal(){
-    this.paypal = true;
+ 
+  clickOption2(){
+    this.paypal =true;
   }
 }

@@ -26,14 +26,16 @@
     "@ionic-native/facebook": "^4.4.2",
     "@ionic-native/geolocation": "^4.3.3",
     "@ionic-native/google-plus": "^4.4.2",
-    "@ionic-native/http": "^4.4.2",
+    "@ionic-native/http": "^4.5.2",
     "@ionic-native/location-accuracy": "^4.4.0",
     "@ionic-native/native-geocoder": "^4.3.3",
     "@ionic-native/native-storage": "^4.4.2",
     "@ionic-native/splash-screen": "4.3.2",
     "@ionic-native/status-bar": "^4.3.2",
+    "@ionic-native/streaming-media": "^4.5.2",
     "@ionic-native/youtube-video-player": "^4.4.2",
     "@ionic/storage": "2.0.1",
+    "com.hutchind.cordova.plugins.streamingmedia": "~0.1.4",
     "cordova-android": "~6.3.0",
     "cordova-browser": "~5.0.1",
     "cordova-plugin-advanced-http": "^1.9.0",
@@ -51,10 +53,12 @@
     "cordova-plugin-request-location-accuracy": "^2.2.2",
     "cordova-plugin-splashscreen": "^4.0.3",
     "cordova-plugin-statusbar": "^2.3.0",
+    "cordova-plugin-streaming-media": "^1.0.2",
     "cordova-plugin-whitelist": "^1.3.1",
     "cordova-plugin-youtube-video-player": "^1.0.6",
     "ionic-angular": "3.8.0",
     "ionic-plugin-keyboard": "^2.2.1",
+    "ionic2-rating": "^1.2.2",
     "ionicons": "3.0.0",
     "rxjs": "5.4.3",
     "sw-toolbox": "3.6.0",
@@ -87,11 +91,18 @@
       "cordova-plugin-camera": {},
       "cordova-plugin-youtube-video-player": {},
       "cordova-plugin-advanced-http": {},
-      "cordova-plugin-email-composer": {}
+      "cordova-plugin-email-composer": {},
+      "com.hutchind.cordova.plugins.streamingmedia": {}
     },
     "platforms": [
       "browser",
       "android"
     ]
-  }
+  },
+  "proxies": [
+    {
+      "path": "/user",
+      "proxyUrl": "http://10.0.2.2:8080/Elearn/rest/user"
+    }
+  ]
 }

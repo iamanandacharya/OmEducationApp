@@ -16,9 +16,13 @@
 <ion-content padding class="course_content_class">
 
     <div class ="videowrapper">
-        <iframe [src]="updateVideoUrl(video_id)" frameborder="0" allowfullscreen="" width="320" height="480"></iframe>
+        <iframe [src]="updateVideoUrl(video_id)" frameborder="0"  width="320" height="480"></iframe>
       </div>
       <button ion-button block (click)="watchVideo(video_id)" >click</button>
+<button ion-button (click)="openVideo()">
+  Start From Here
+</button>
+
   <div id="course_id">
    <h1>The MVC Architecture Pattern</h1>
    

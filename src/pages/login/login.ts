@@ -6,6 +6,7 @@ import {OtpPage} from '../otp/otp'
 import {SignupPage} from '../signup/signup'
 import {DashboardPage} from '../dashboard/dashboard'
 
+import { RestApiUrlCallProvider } from '../../providers/rest-api-url-call/rest-api-url-call';
 import {ProfilePage} from '../profile/profile'
 //import facebook plugin 
 import { Facebook } from '@ionic-native/facebook';
@@ -31,11 +32,20 @@ export class LoginPage{
     public isLoggedIn:boolean=false;
     users:any;
     public numberValue:number;
-
-    public responseData:any;
-
-    constructor(public navCtrl:NavController,public http:HTTP,public menuCtrl:MenuController,public googlePlus:GooglePlus,public nativeStorage:NativeStorage,public facebook:Facebook,public fb: FormBuilder,public alertCtrl:AlertController,public appCtrl:App){
-    this.menuCtrl.enable(false)
+    responseData:any;
+    // loginBox:any;
+     
+      loginData = {
+        "userid" :"",
+        "password" : ""
+      }
+      data:any;
+    constructor(public formBuilder:FormBuilder,public restApiUrlCallProvider:RestApiUrlCallProvider,public navCtrl:NavController,public http:HTTP,public menuCtrl:MenuController,public googlePlus:GooglePlus,public nativeStorage:NativeStorage,public facebook:Facebook,public fb: FormBuilder,public alertCtrl:AlertController,public appCtrl:App){
+        // this.loginBox = this.formBuilder.group({
+        //     userid: ['',Validators.required],
+        //     password : ['',Validators.required]
+        //         })
+        this.menuCtrl.enable(false)
         facebook.getLoginStatus()
     .then(res=> {
         console.log(res.status);
@@ -92,9 +102,7 @@ export class LoginPage{
      doSign(){
          this.navCtrl.push(SignupPage);
      }
-     dologin(){
-         this.navCtrl.setRoot(DashboardPage)
-     }
+     
 
 
      //login by facebok and facebook profile details
@@ -147,11 +155,6 @@ export class LoginPage{
           })
           
           .then(function(){
-        //     let headers = new Headers();
-        //   this.http.post("localhost:8080/user/register",user,headers).then((res:HTTPResponse)=>{
-        //       this.responseData = res;
-        //       console.log(res);
-        //       localStorage.setItem('userData',JSON.stringify(this.responseData));
               console.log(user);
               navCtrl.setRoot(DashboardPage)
             }),  
@@ -162,7 +165,56 @@ export class LoginPage{
       
       .catch(err => console.log(err))
   }
+ 
 
+  //login with email and password
+  dologin(){
+    
+  
+      let headers = new Headers();
+     // use post method for call api and send OTP
+    //   this.http.post("http://192.168.43.206:8080/Elearn/rest/user/login",loginData,headers).then((res:HTTPResponse) =>{
+    //       this.responseData = res;
+    //       console.log(res);
+    //       localStorage.setItem('mobileData',JSON.stringify(this.responseData));
+    //       this.navCtrl.setRoot(DashboardPage);
+    //   },(err) =>{
+    //       console.log(err);
+    //   })
+    //        this.restApiUrlCallProvider.postData(this.loginData,'login').then((result)=>{
+    //        this.responseData = result;
+    //        if(this.responseData.loginData){
+    //          console.log(this.responseData);
+    //          localStorage.setItem('loginData', JSON.stringify(this.responseData));
+    //          this.navCtrl.setRoot(DashboardPage)
+    //        }
+    //        else{
+    //          console.log();
+    //        }
+    //      },(err)=>{
+    //        console.log();
+    //      })
+            
+    this.restApiUrlCallProvider.login(this.loginData).then((result)=>{
+        this.data = result;
+        if(this.responseData.loginData){
+            console.log(this.responseData);
+            this.nativeStorage.setItem('loginData',this.data.access_token);
+            this.nativeStorage.getItem('loginData');
+            this.navCtrl.setRoot(DashboardPage);
+
+        }
+        else{
+
+        }
+    })
+
+}
+
+      //forgot password page
+      doForgotPassword($event){
+
+      }
 
   profile(){
     this.navCtrl.push(ProfilePage)

@@ -29,6 +29,11 @@ import { NativeStorage } from '@ionic-native/native-storage';
 import { ContactusPage } from '../pages/contactus/contactus';
 
 import { CoursecategoryPage } from '../pages/coursecategory/coursecategory';
+
+import { RestApiUrlCallProvider } from '../providers/rest-api-url-call/rest-api-url-call';
+ 
+import {HTTP, HTTPResponse} from '@ionic-native/http'
+import { Header } from 'ionic-angular/components/toolbar/toolbar-header';
 @Component({
   templateUrl: 'app.html'
 })
@@ -40,7 +45,7 @@ export class MyApp {
 
   pages: Array<{title: string, component: any}>;
 
-  constructor(public platform: Platform,public nativeStorage:NativeStorage,public google:GooglePlus,public facebook:Facebook, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+  constructor(public restApi:RestApiUrlCallProvider,public platform: Platform,public nativeStorage:NativeStorage,public google:GooglePlus,public facebook:Facebook, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
@@ -124,5 +129,14 @@ aboutUsClick(){
 }
 contactUsPage(){
   this.nav.push(ContactusPage)
+}
+logoutByEmail(){
+this.restApi.logout().then((result)=>{
+  this.nativeStorage.clear();
+  console.log(result)
+  this.nav.push(LoginPage)
+},(err)=>{
+  console.log(err)
+})
 }
 }

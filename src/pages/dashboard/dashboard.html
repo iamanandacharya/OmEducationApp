@@ -39,9 +39,9 @@
       </ion-item>
 
       <ion-item>
-          <ion-range min="-200" max="200" [(ngModel)]="saturation" color="danger">
-            <ion-label range-left>0</ion-label>
-            <ion-label range-right>10</ion-label>
+          <ion-range min="-200" dualKnobs="true" max="100" [(ngModel)]="saturation" color="danger">
+            <ion-label range-left></ion-label>
+            <ion-label range-right></ion-label>
           </ion-range>
         </ion-item>
          
@@ -50,21 +50,23 @@
           </ion-item>
     
           <ion-item>
-                  <ion-range min="-200" max="200" snap="true" steps="3" [(ngModel)]="saturation_2" color="danger">
-                    <ion-label range-left>0</ion-label>
-                    <ion-label range-right>10</ion-label>
-                  </ion-range>
-                </ion-item>
-        
-                <ion-item>
-                    <h4>Basic of AngularJS</h4>
-                  </ion-item>
-            <ion-item>
-              <ion-range min="-200"  max="200" snap="true" steps="3" [(ngModel)]="saturation_3" color="danger">
-            <ion-label range-left>0</ion-label>
-            <ion-label range-left> 10</ion-label>
-              </ion-range>
-            </ion-item>    
+            <ion-range min="-200" dualKnobs="true" max="300" [(ngModel)]="saturation" color="danger">
+              <ion-label range-left></ion-label>
+              <ion-label range-right></ion-label>
+            </ion-range>
+          </ion-item>
+                  
+    <ion-item>
+      <h4>Basic of Angular</h4>
+    </ion-item>
+
+    <ion-item>
+      <ion-range min="-200" dualKnobs="true" max="450" [(ngModel)]="saturation" color="danger">
+        <ion-label range-left></ion-label>
+        <ion-label range-right></ion-label>
+      </ion-range>
+    </ion-item>
+           
               
 
              <ion-item>

@@ -16,13 +16,22 @@ import { CourseContentPage } from '../course-content/course-content';
 })
 export class CourcePage {
 
+  public like_count:number = 5;
+  public rate :number =  4;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CourcePage');
   }
+  clickCount(){
+    this.like_count++;
+  }
   goToCourse(){
 this.navCtrl.push(CourseContentPage)
+  }
+  onModelChange($event){
+    this.navCtrl.push(CourseContentPage)
   }
 }

@@ -24,16 +24,43 @@
     
       <ion-row>
         <ion-col>
-          <button ion-button icon-left clear small>
+             
+          <ion-item item-start>
+          <button ion-button icon-left clear small (click)="clickCount()">
             <ion-icon name="thumbs-up"></ion-icon>
-            <div>12 Likes</div>
+            <div>{{like_count}}</div>
           </button>
-        </ion-col>
-        <ion-col>
-          <button ion-button icon-left clear small>
-           
-            <div>$50</div>
-          </button>
+          </ion-item>
+        <div>
+            
+                <ion-item>
+                   
+             <!-- 
+           readOnly=false default value
+           max=5 defalult statr value
+           emptyStarIconName = star-outline default value
+           halfStarIconname = star=half -default value
+           starIconName= star -defaultName
+           nullable = false -default name
+           (ngModelChange) = ""onModelChange($event) -use it when you need to do something when user clicks on a star
+           In case you onlyneed to change ngModel property,the property can be ommited
+  
+            -->
+                <rating [(ngModel)]="rate" 
+                readOnly="false" 
+                max="5"
+                emptyStarIconName="star-outline"
+                halfStarIconName="star-half"
+                starIconName="star" 
+                nullable="false" 
+                name="rate"
+                (ngModelChange)="onModelChange($event)"> <!--use it when you need to do something when user clicks on a star. in case you only need to change ngModel property, this property can be ommited.-->
+        </rating>
+        <div item-end>{{rate}}</div>
+                </ion-item>
+          
+              </div>
+  
         </ion-col>
       
         <button ion-button (click)="goToCourse()" block>Show full details</button>
@@ -43,64 +70,61 @@
     
 </ion-card>
 <ion-card>
-    <img src="assets/imgs/htmlcss.jpg">
+    <img src="assets/imgs/github-mark.png">
   
     <ion-card-content>
-      
-      <h1>Awesome HTML & CSS with less programming</h1>
+      <h1>Github Webhooks For Beginners</h1>
       <p>Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine... out of a DeLorean?! Whoa. This is heavy.</p>
     </ion-card-content>
   
     <ion-row>
       <ion-col>
-        <button ion-button icon-left clear small>
+           
+        <ion-item item-start>
+        <button ion-button icon-left clear small (click)="clickCount()">
           <ion-icon name="thumbs-up"></ion-icon>
-          <div>12 Likes</div>
+          <div>{{like_count}}</div>
         </button>
-      </ion-col>
-      <ion-col>
-        <button ion-button icon-left clear small>
-         
-          <div>$50</div>
-        </button>
-      </ion-col>
-    <button ion-button (click)="goToCourse()" block>show full details</button>
-      
+        </ion-item>
+      <div>
+          
+              <ion-item>
+                 
+           <!-- 
+         readOnly=false default value
+         max=5 defalult statr value
+         emptyStarIconName = star-outline default value
+         halfStarIconname = star=half -default value
+         starIconName= star -defaultName
+         nullable = false -default name
+         (ngModelChange) = ""onModelChange($event) -use it when you need to do something when user clicks on a star
+         In case you onlyneed to change ngModel property,the property can be ommited
 
-    </ion-row>
-  
-</ion-card>
+          -->
+              <rating [(ngModel)]="rate" 
+              readOnly="false" 
+              max="5"
+              emptyStarIconName="star-outline"
+              halfStarIconName="star-half"
+              starIconName="star" 
+              nullable="false" 
+              name="rate"
+              (ngModelChange)="onModelChange($event)"> <!--use it when you need to do something when user clicks on a star. in case you only need to change ngModel property, this property can be ommited.-->
+      </rating>
+      <div item-end>{{rate}}</div>
+              </ion-item>
+        
+            </div>
 
-<ion-card>
-<ion-thumbnail item-start>
-  <img src="assets/imgs/wordpress.png">
-</ion-thumbnail>
-    <ion-card-content>
-      <h1>Wordpress theme Development</h1>
-      <p>Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine... out of a DeLorean?! Whoa. This is heavy.</p>
-    </ion-card-content>
-  
-    <ion-row>
-      <ion-col>
-        <button ion-button icon-left clear small>
-          <ion-icon name="thumbs-up"></ion-icon>
-          <div>12 Likes</div>
-        </button>
-      </ion-col>
-      <ion-col>
-        <button ion-button icon-left clear small>
-         
-          <div>$50</div>
-        </button>
       </ion-col>
     
-      <button ion-button (click)="goToCourse()" block>show full details</button>
+      <button ion-button (click)="goToCourse()" block>Show full details</button>
       
-
 
     </ion-row>
   
 </ion-card>
+
 <ion-card>
 <ion-list>
     <ion-item>
@@ -110,13 +134,38 @@
       <h6><div id="theme_dev_id"> Wordpress theme <br>Development</div></h6>
        <h6><div id="theme_dev_id2">John Thanson</div></h6>
        <button ion-button icon-left clear small>
-          <ion-icon name="thumbs-up"></ion-icon>
+          <ion-icon icon-left name="thumbs-up"></ion-icon>
           <div>12 Likes</div></button><br>
-        
-        <button ion-button icon-left clear small>
+          <div>
+              
+                  <ion-item>
+                     
+               <!-- 
+             readOnly=false default value
+             max=5 defalult statr value
+             emptyStarIconName = star-outline default value
+             halfStarIconname = star=half -default value
+             starIconName= star -defaultName
+             nullable = false -default name
+             (ngModelChange) = ""onModelChange($event) -use it when you need to do something when user clicks on a star
+             In case you onlyneed to change ngModel property,the property can be ommited
+    
+              -->
+                  <rating [(ngModel)]="rate" 
+                  readOnly="false" 
+                  max="5"
+                  emptyStarIconName="star-outline"
+                  halfStarIconName="star-half"
+                  starIconName="star" 
+                  nullable="false" 
+                  name="rate"
+                  (ngModelChange)="onModelChange($event)"> <!--use it when you need to do something when user clicks on a star. in case you only need to change ngModel property, this property can be ommited.-->
+          </rating>
+          <div item-end>{{rate}}</div>
+                  </ion-item>
             
-             <div>$50</div>
-           </button>
+                </div>
+    
    
     </ion-item>
 </ion-list>
@@ -135,11 +184,35 @@
           <ion-icon name="thumbs-up"></ion-icon>
           <div>12 Likes</div></button><br>
         
-        <button ion-button icon-left clear small>
+          <div>
+              
+                  <ion-item>
+                     
+               <!-- 
+             readOnly=false default value
+             max=5 defalult statr value
+             emptyStarIconName = star-outline default value
+             halfStarIconname = star=half -default value
+             starIconName= star -defaultName
+             nullable = false -default name
+             (ngModelChange) = ""onModelChange($event) -use it when you need to do something when user clicks on a star
+             In case you onlyneed to change ngModel property,the property can be ommited
+    
+              -->
+                  <rating [(ngModel)]="rate" 
+                  readOnly="false" 
+                  max="5"
+                  emptyStarIconName="star-outline"
+                  halfStarIconName="star-half"
+                  starIconName="star" 
+                  nullable="false" 
+                  name="rate"
+                  (ngModelChange)="onModelChange($event)"> <!--use it when you need to do something when user clicks on a star. in case you only need to change ngModel property, this property can be ommited.-->
+          </rating>
+          <div item-end>{{rate}}</div>
+                  </ion-item>
             
-             <div>$50</div>
-           </button>
-   
+                </div>   
     </ion-item>
 </ion-list>
 </ion-card>

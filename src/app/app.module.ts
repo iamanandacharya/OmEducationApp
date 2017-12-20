@@ -42,6 +42,18 @@ import { ContactusPage } from '../pages/contactus/contactus';
 import { AddVisaCardDetailsPage } from '../pages/add-visa-card-details/add-visa-card-details';
 import { AddtocartPage } from '../pages/addtocart/addtocart';
 import { CoursecategoryPage } from '../pages/coursecategory/coursecategory';
+
+import { ReviewPageFormPage } from '../pages/review-page-form/review-page-form';
+//ionic 2 rating module
+import { Ionic2RatingModule } from 'ionic2-rating';
+
+import { StreamingMedia } from '@ionic-native/streaming-media';
+
+//Rest api Provider and call http
+import { RestApiUrlCallProvider } from '../providers/rest-api-url-call/rest-api-url-call';
+import {HttpModule} from "@angular/http"
+
+
 @NgModule({
   declarations: [
     MyApp,
@@ -66,10 +78,13 @@ import { CoursecategoryPage } from '../pages/coursecategory/coursecategory';
     AddtocartPage,
     ByeNowPage,
     AddVisaCardDetailsPage,
+    ReviewPageFormPage,
     
   ],
   imports: [
     BrowserModule,
+    HttpModule,
+    Ionic2RatingModule,//map 2 ionic-ratitng module here
     IonicModule.forRoot(MyApp),
   ],
   bootstrap: [IonicApp],
@@ -96,6 +111,7 @@ import { CoursecategoryPage } from '../pages/coursecategory/coursecategory';
     ByeNowPage,
     CoursecategoryPage,
     AddVisaCardDetailsPage,
+    ReviewPageFormPage,
    
   ],
   providers: [
@@ -111,8 +127,11 @@ import { CoursecategoryPage } from '../pages/coursecategory/coursecategory';
     YoutubeVideoPlayer,
     HTTP,
     EmailComposer,
+    StreamingMedia,
+    
    
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    RestApiUrlCallProvider
   ]
 })
 export class AppModule {}

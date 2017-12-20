@@ -29,4 +29,17 @@ page-course-content {
         line-height: 1.84rem;
         font-size: small;
     }
+    ul {
+        padding: 0px;
+      
+        &.rating li {
+          padding: 5px 10px !important;
+          background: none;
+          color: #ffb400;
+      
+          ion-icon {
+            font-size: 30px;
+          }
+        }
+      }
 }

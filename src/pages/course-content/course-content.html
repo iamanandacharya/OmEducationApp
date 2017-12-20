@@ -24,17 +24,22 @@
   <div class="class_content_box_1">Description</div>
 
 </ion-item-divider>
-<ion-item>
-<<div class="class_content_box_1">>
-    Model–view–controller (MVC) is a software architectural pattern
+
+  
+<div class="class_content_box_1">
+
+  <p>
+    Model–view–controller (MVC) is a software 
+    architectural pattern
      for implementing user interfaces on computers. It divides a given 
      application into three interconnected parts. This is done to separate 
      internal representations of information from the ways information is
       presented to, and accepted from, the user.
     The MVC design pattern decouples these major components allowing for 
     efficient code reuse and parallel development.
+  </p>
   </div>
-</ion-item>
+
 <ion-item-divider color="light">    
     <div class="class_content_box_1">What You will learn</div>
   
@@ -157,6 +162,7 @@
                           <!-- check mark circle  icon --> 
                           
                          </ion-item>
+                         
            <ion-item>
                 <!-- Play icon -->
                 <ion-icon item-start name="logo-facebook">
@@ -180,7 +186,54 @@
                   
                  </ion-item>
 
+                 <ion-item-divider color="light">
+                  <h2>Rate This Course</h2>
+                </ion-item-divider>
+                <div>
+                  <ion-item item-start>
+                     
+               <!-- 
+             readOnly=false default value
+             max=5 defalult statr value
+             emptyStarIconName = star-outline default value
+             halfStarIconname = star=half -default value
+             starIconName= star -defaultName
+             nullable = false -default name
+             (ngModelChange) = ""onModelChange($event) -use it when you need to do something when user clicks on a star
+             In case you onlyneed to change ngModel property,the property can be ommited
+    
+              -->
+                  <rating [(ngModel)]="rate" 
+                  readOnly="false" 
+                  max="5"
+                  emptyStarIconName="star-outline"
+                  halfStarIconName="star-half"
+                  starIconName="star" 
+                  nullable="false" 
+                  name="rate"
+                  (ngModelChange)="onModelChange($event)"> <!--use it when you need to do something when user clicks on a star. in case you only need to change ngModel property, this property can be ommited.-->
+          </rating>
+          <div item-end>{{rate}}</div>
+                  </ion-item>
+            
+                </div>
+    
             <button ion-button block color="danger" (click)="byeNow()">Bye Now</button>
 
-            <button ion-button block color="danger" (click)="addToCart()">Add To Cart</button>
+            <button ion-button block color="danger"  (click)="addToCart()">Add To Cart</button>
+
+                 <!-- call one event from two different button and add validation if add towishlist click then 
+                remove wishlist will disable and vice versa.
+               -->
+            <button ion-button block color="light" *ngIf="!add_wish" (click)="addToWishlist()">
+              <ion-icon ios="ios-heart-outline" md="md-heart-outline">
+                  </ion-icon>&nbsp;Add To Wishlist
+              </button>
+              <button ion-button block color="danger" *ngIf="add_wish" (click)="addToWishlist()">
+               <ion-icon ios="ios-heart" md="md-heart">
+              </ion-icon>
+              &nbsp;Remove from Wishlist
+              </button>  
+              
+           
 </ion-content>

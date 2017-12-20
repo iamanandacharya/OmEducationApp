@@ -4,7 +4,6 @@
     </ion-toolbar>
   </ion-header>
 <ion-content class="login-content" padding>
-  <form >
               <ion-row>
                   <ion-col>
                       <ion-item-group>
@@ -14,15 +13,15 @@
                     </div>
                    
                       <ion-item>
-                          <ion-input name="email" placeholder="Enter your Email" full type="text" > </ion-input>
+                          <ion-input name="userid" [(ngModel)]="loginData.userid"  placeholder="Enter your Email" full type="text" > </ion-input>
                           </ion-item>
                           <ion-item>
-                            <ion-input maxlength="10" name="password" placeholder="Enter your Password" full type="password" > </ion-input>
+                            <ion-input maxlength="10" [(ngModel)]="loginData.password" name="password" placeholder="Enter your Password" full type="password" > </ion-input>
                             </ion-item>
                             
-                              <button ion-button full class="submit-btn" (click)="dologin($event)" type="submit">Login</button>
+                              <button ion-button full class="submit-btn" type="submit" (click)="dologin()" >Login</button>
                               
-                              <button ion-button block class="submit-btn" (click)="dologin($event)" type="submit">Forgot password!</button>
+                              <button ion-button block class="submit-btn" (click)="doForgotPassword()" type="submit">Forgot password!</button>
                               
                             </ion-list>
                     
@@ -31,7 +30,6 @@
                   </ion-col>
                         
                 </ion-row>
-              </form>
               
 <div id="card-content-id">
 <div id="social_accnt_id">

@@ -4,5 +4,11 @@
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}
-  }
+  },
+  "proxies":[
+    {
+      "path":"/user",
+      "proxyUrl":"http://localhost:8080/Elearn/rest/user"
+    }
+  ]
 }

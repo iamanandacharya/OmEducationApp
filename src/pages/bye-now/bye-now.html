@@ -13,44 +13,35 @@
 </ion-header>
 
 
-<ion-content padding>
-    <ion-card>
-        <ion-card-content>
-         
-            <ion-item>
-                <ion-label>Select Payment Option</ion-label>
-                <ion-select [(ngModel)]="payment"  (ionChange)="clickOption()" name="payment" multiple="false"  cancelText="Nah" okText="Okay!" >
-                  <ion-option value="debit"><ion-icon ios="ios-card" md="md-card"></ion-icon>Visa</ion-option>
-                  <ion-option value="delivery">PayPal</ion-option>
-                  
-                </ion-select>
-               
-              </ion-item> 
-             
+<ion-content padding >
+  <ion-card>
+      <ion-card-content>
+       
+          <ion-item>
+              <ion-label>Select Payment Option</ion-label>
+              <ion-select [(ngModel)]="payment"  (ionChange)="clickOption()" name="payment" multiple="false"  cancelText="Nah" okText="Okay!" >
+                <ion-option value="debit">Debit</ion-option>
+                <ion-option value="net_banking">Net Banking</ion-option>
+                
+              </ion-select>
+            </ion-item> 
            
-        </ion-card-content>
+         
+      </ion-card-content>
 <ion-card-content *ngIf="bank">
-    <ion-item>
-
-  <ion-label>Selcet Bank</ion-label>
-        <ion-select name="bank"  placehodder="Select Card"  multiple="false"  cancelText="Nah" okText="Okay!" >
-          <ion-option  value="sbi">State bank Of India</ion-option>
-          <ion-option value="bob">Bank Of Baroda</ion-option>
-          <ion-option value="boi">Bank Of India</ion-option>
-          
-        </ion-select>
-      </ion-item>  
-</ion-card-content>
-
-<ion-card-content *ngIf="paypal">
   <ion-item>
-    <button ion-button color="danger">Proceed</button>
-  </ion-item>
+
+<ion-label>Selcet Bank</ion-label>
+      <ion-select name="bank"  placehodder="Select Card"  multiple="false"  cancelText="Nah" okText="Okay!" >
+        <ion-option  value="sbi">State bank Of India</ion-option>
+        <ion-option value="bob">Bank Of Baroda</ion-option>
+        <ion-option value="boi">Bank Of India</ion-option>
+        
+      </ion-select>
+    </ion-item>  
 </ion-card-content>
 
-
-      </ion-card>
-            
-      <button ion-button block (click)="selectPayMethod()">Sure</button>
-
+    </ion-card>
+          
+    <button ion-button block (click)="selectPayMethod()">Sure</button>
 </ion-content>

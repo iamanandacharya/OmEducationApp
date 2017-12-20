@@ -25,4 +25,7 @@ export class AddVisaCardDetailsPage {
   makePayment(){
     this.navCtrl.push(CourseOverviewPage)
   }
+  register(){
+    
+  }
 }
