@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
+import { RestApiUrlCallProvider } from '../../providers/rest-api-url-call/rest-api-url-call';
+
 @Component({
   selector: 'page-list',
   templateUrl: 'list.html'
@@ -10,7 +12,8 @@ export class ListPage {
   icons: string[];
   items: Array<{title: string, note: string, icon: string}>;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  data:any;
+  constructor(public restApiUrlCallProvider:RestApiUrlCallProvider, public navCtrl: NavController, public navParams: NavParams) {
     // If we navigated to this page, we will have an item available as a nav param
     this.selectedItem = navParams.get('item');
 
@@ -34,4 +37,20 @@ export class ListPage {
       item: item
     });
   }
+  post:any;
+  ionViewDidLoad(){
+//fetch data from server.
+//use subscribe for
+
+    this.restApiUrlCallProvider.getData()
+    .subscribe(data=>{
+      this.post = data.data.children; 
+      console.log( this.post )},
+      err => {
+        console.log(err);
+      });
+    
+  }
+
+  
 }

@@ -196,13 +196,13 @@ export class LoginPage{
     //      })
             
     this.restApiUrlCallProvider.login(this.loginData).then((result)=>{
-        this.data = result;
+        this.responseData = result;
         if(this.responseData.loginData){
             console.log(this.responseData);
-            this.nativeStorage.setItem('loginData',this.data.access_token);
-            this.nativeStorage.getItem('loginData');
+            this.nativeStorage.setItem('loginData',this.responseData.access_token);
+            
             this.navCtrl.setRoot(DashboardPage);
-
+            this.nativeStorage.getItem('loginData');
         }
         else{
 

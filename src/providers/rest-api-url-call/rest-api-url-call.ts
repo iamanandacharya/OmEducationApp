@@ -15,12 +15,14 @@ import { DashboardPage } from '../../pages/dashboard/dashboard';
   let apiUrl = 'http://10.0.2.2:8080/Elearn/rest/user/';
 */
 let apiUrl:string = 'http://localhost:8080/Elearn/rest/user/';
+let api:string = 'https://www.reddit.com/r/gifs/top/.json?limit=10&sort=hot';
+let url:string = 'https://api.github.com/users/seeschweiler';
 
 @Injectable()
 export class RestApiUrlCallProvider {
   
   private loginApiUrl = '';
-
+  public responseData:any;
   
   constructor(public http: Http ,public httpionic:HTTP) {
     console.log('Hello RestApiUrlCallProvider Provider');
@@ -90,6 +92,29 @@ register(credentials){
      localStorage.clear();
      
     })
+  }
+  getData(){
+    return this.http.get(api)
+    .map((response:Response)=>response.json());
+  }
+
+  //getdata method
+  displayData(){
+  return  new Promise((resolve,reject) =>{
+    this.http.get(url)
+    .subscribe(
+      res => {
+        this.responseData = res.json();
+        this.responseData = Array.of(this.responseData);
+        console.log(this.responseData);
+      },
+      (err) => {
+        console.log(err);
+      }
+    )
+    
+  })
+  
   }
 
 }

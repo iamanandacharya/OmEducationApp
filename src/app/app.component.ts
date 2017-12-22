@@ -139,4 +139,7 @@ this.restApi.logout().then((result)=>{
   console.log(err)
 })
 }
+listPage(){
+  this.nav.push(ListPage);
+}
 }

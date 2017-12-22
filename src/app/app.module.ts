@@ -52,6 +52,7 @@ import { StreamingMedia } from '@ionic-native/streaming-media';
 //Rest api Provider and call http
 import { RestApiUrlCallProvider } from '../providers/rest-api-url-call/rest-api-url-call';
 import {HttpModule} from "@angular/http"
+import { HttpGenerateProvider } from '../providers/http-generate/http-generate';
 
 
 @NgModule({
@@ -80,10 +81,12 @@ import {HttpModule} from "@angular/http"
     AddVisaCardDetailsPage,
     ReviewPageFormPage,
     
+    
   ],
   imports: [
     BrowserModule,
     HttpModule,
+    
     Ionic2RatingModule,//map 2 ionic-ratitng module here
     IonicModule.forRoot(MyApp),
   ],
@@ -129,9 +132,12 @@ import {HttpModule} from "@angular/http"
     EmailComposer,
     StreamingMedia,
     
+    
    
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    RestApiUrlCallProvider
+    RestApiUrlCallProvider,
+    HttpGenerateProvider,
+    
   ]
 })
 export class AppModule {}
