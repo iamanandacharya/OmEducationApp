@@ -23,10 +23,18 @@ import { NativeStorage } from '@ionic-native/native-storage';
 
 import {HTTP, HTTPResponse} from '@ionic-native/http'
 import { Header } from 'ionic-angular/components/toolbar/toolbar-header';
+import { Injectable } from '@angular/core';
+import { Http,Response,Headers } from '@angular/http';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/do';
+
+
+let apiUrl:string = 'http://localhost:8080/Elearn/rest/user/';
 @Component ({
     selector:'login-page',
     templateUrl:'login.html'
 })
+
 export class LoginPage{
 
     public isLoggedIn:boolean=false;
@@ -40,7 +48,7 @@ export class LoginPage{
         "password" : ""
       }
       data:any;
-    constructor(public formBuilder:FormBuilder,public restApiUrlCallProvider:RestApiUrlCallProvider,public navCtrl:NavController,public http:HTTP,public menuCtrl:MenuController,public googlePlus:GooglePlus,public nativeStorage:NativeStorage,public facebook:Facebook,public fb: FormBuilder,public alertCtrl:AlertController,public appCtrl:App){
+    constructor(public formBuilder:FormBuilder,public Http:Http,public restApiUrlCallProvider:RestApiUrlCallProvider,public navCtrl:NavController,public http:HTTP,public menuCtrl:MenuController,public googlePlus:GooglePlus,public nativeStorage:NativeStorage,public facebook:Facebook,public fb: FormBuilder,public alertCtrl:AlertController,public appCtrl:App){
         // this.loginBox = this.formBuilder.group({
         //     userid: ['',Validators.required],
         //     password : ['',Validators.required]
@@ -168,12 +176,22 @@ export class LoginPage{
  
 
   //login with email and password
+  
   dologin(){
     
   
-      let headers = new Headers();
+      let headers = new Headers();   
+     headers.append('Content-Type','application/json');       
+    this.restApiUrlCallProvider.login(this.loginData).then((result)=>{
+        this.responseData = result;        
+            console.log(this.responseData);
+            localStorage.setItem('loginData',this.responseData.access_token);
+            localStorage.getItem('loginData'); 
+        })
+    this.navCtrl.setRoot(DashboardPage);
+
      // use post method for call api and send OTP
-    //   this.http.post("http://192.168.43.206:8080/Elearn/rest/user/login",loginData,headers).then((res:HTTPResponse) =>{
+    //   this.http.post("http://localhost:8080/Elearn/rest/user/login",this.loginData,headers).then((res:HTTPResponse) =>{
     //       this.responseData = res;
     //       console.log(res);
     //       localStorage.setItem('mobileData',JSON.stringify(this.responseData));
@@ -181,35 +199,7 @@ export class LoginPage{
     //   },(err) =>{
     //       console.log(err);
     //   })
-    //        this.restApiUrlCallProvider.postData(this.loginData,'login').then((result)=>{
-    //        this.responseData = result;
-    //        if(this.responseData.loginData){
-    //          console.log(this.responseData);
-    //          localStorage.setItem('loginData', JSON.stringify(this.responseData));
-    //          this.navCtrl.setRoot(DashboardPage)
-    //        }
-    //        else{
-    //          console.log();
-    //        }
-    //      },(err)=>{
-    //        console.log();
-    //      })
-            
-    this.restApiUrlCallProvider.login(this.loginData).then((result)=>{
-        this.responseData = result;
-        if(this.responseData.loginData){
-            console.log(this.responseData);
-            this.nativeStorage.setItem('loginData',this.responseData.access_token);
-            
-            this.navCtrl.setRoot(DashboardPage);
-            this.nativeStorage.getItem('loginData');
-        }
-        else{
-
-        }
-    })
-
-}
+   }
 
       //forgot password page
       doForgotPassword($event){

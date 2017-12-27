@@ -1,0 +1,59 @@
+{
+  "project_info": {
+    "project_number": "456110808227",
+    "firebase_url": "https://fir-omeducation.firebaseio.com",
+    "project_id": "firebase-omeducation",
+    "storage_bucket": "firebase-omeducation.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:456110808227:android:6c5792ba94ae4404",
+        "android_client_info": {
+          "package_name": "com.ionic.omeducation"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "456110808227-1osno8mm7d9ra4kseh8odc65p3bhqbk6.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "456110808227-ej0p61mgakeebl39735te2hacgl3pmh3.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "456110808227-k87l0vitjm7vsjfic64p6c55h62lpmvi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ionic.omeducation",
+            "certificate_hash": "74b33f992a35bd31f0103fb4d490acfc81b7228c"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBMdZc3Uvd-Vj4z8H8lHtKep3Z9AvSNTS4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "456110808227-1osno8mm7d9ra4kseh8odc65p3bhqbk6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

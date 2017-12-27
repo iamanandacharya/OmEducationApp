@@ -14,7 +14,7 @@ import { DashboardPage } from '../../pages/dashboard/dashboard';
   and Angular DI.
   let apiUrl = 'http://10.0.2.2:8080/Elearn/rest/user/';
 */
-let apiUrl:string = 'http://localhost:8080/Elearn/rest/user/';
+let apiUrl:string = 'http://192.168.0.102:8080/Elearn/rest/user/';
 let api:string = 'https://www.reddit.com/r/gifs/top/.json?limit=10&sort=hot';
 let url:string = 'https://api.github.com/users/seeschweiler';
 

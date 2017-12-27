@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { Nav, Platform } from 'ionic-angular';
+import { Nav, Platform,AlertController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -34,6 +34,10 @@ import { RestApiUrlCallProvider } from '../providers/rest-api-url-call/rest-api-
  
 import {HTTP, HTTPResponse} from '@ionic-native/http'
 import { Header } from 'ionic-angular/components/toolbar/toolbar-header';
+
+//ionic push notification add plugin
+import {Push,PushObject,PushOptions} from "@ionic-native/push"
+
 @Component({
   templateUrl: 'app.html'
 })
@@ -45,9 +49,45 @@ export class MyApp {
 
   pages: Array<{title: string, component: any}>;
 
-  constructor(public restApi:RestApiUrlCallProvider,public platform: Platform,public nativeStorage:NativeStorage,public google:GooglePlus,public facebook:Facebook, public statusBar: StatusBar, public splashScreen: SplashScreen) {
-    this.initializeApp();
+  constructor(public restApi:RestApiUrlCallProvider,
+    public platform: Platform,
+    public nativeStorage:NativeStorage,
+    public google:GooglePlus,
+    public facebook:Facebook, 
+    public statusBar: StatusBar, 
+    public splashScreen: SplashScreen,
+    public push:Push,
+    public alertController:AlertController,
+  ) {
+//    this.initializeApp();
+this.platform.ready().then(() =>{
+  this.statusBar.styleDefault();
+  this.splashScreen.hide();
+  
 
+  let env = this;
+  let navCtrl = this.nav
+  
+  this.google.trySilentLogin({
+    'scopes':'',
+    'webClientId':'',
+    'offline':true
+  }).then(function(user){
+    env.nativeStorage.getItem('user')
+    .then(function(data){
+      console.log(data)
+      console.log(user)
+      env.nav.setRoot(DashboardPage);
+  })
+
+ 
+  },function(error){
+    env.nav.push(LoginPage)
+  }
+)
+
+  this.initPushNotification();
+})
     // used for an example of ngFor and navigation
     this.pages = [
       { title: 'Dashboard', component: HomePage },
@@ -63,35 +103,57 @@ export class MyApp {
 
   }
 
-  initializeApp() {
-    this.platform.ready().then(() => {
-      // Okay, so the platform is ready and our plugins are available.
-      // Here you can do any higher level native things you might need.
-      this.statusBar.styleDefault();
-      this.splashScreen.hide();
-
-      let env = this;
-      let navCtrl = this.nav
+  // initializeApp() {
+  //   this.platform.ready().then(() => {
+  //     // Okay, so the platform is ready and our plugins are available.
+  //     // Here you can do any higher level native things you might need.
       
-      this.google.trySilentLogin({
-        'scopes':'',
-        'webClientId':'',
-        'offline':true
-      }).then(function(user){
-        env.nativeStorage.getItem('user')
-        .then(function(data){
-          console.log(data)
-          console.log(user)
-          env.nav.setRoot(DashboardPage);
-      })
-
-     
-      },function(error){
-        env.nav.push(LoginPage)
-      }
-    )
+  //   })
+   
+  //   .catch(err =>console.log(err))
+  // }
+  initPushNotification(){
+    
+    const options: PushOptions = {
+      android: {
+        senderID: '456110808227'
+      },
+    }
+    const pushobject:PushObject = this.push.init(options)
+    pushobject.on('registeration').subscribe((data:any) => {
+      console.log('device token' + data.registerationId)
     })
-    .catch(err =>console.log(err))
+    pushobject.on('notification').subscribe((data:any) => {
+      console.log("message" + data.message);
+     //if user using app and push notification comes
+    //Whether the notification was received while the app was in the foreground
+    if(data.additionalData.foreground) {
+      //poup alert
+      let confirmAlert =  this.alertController.create({
+        title : "Notification",
+        message : data.message,
+        buttons : [{
+          text:  'Ignore',
+          role: 'teacher'
+        },{
+          text  : 'view',
+          handler: ()=>{
+            this.nav.push(HomePage,{message:data.message})
+            console.log('push notification click')
+          }
+        }]
+      })
+    }else {
+      //if user NOT using app and push notification comes
+      //TODO: Your logic on click of push notification directly
+      this.nav.push(LoginPage, { message: data.message });
+      console.log('Push notification clicked');
+    }
+    })
+    pushobject.on('error').subscribe(error => {
+      console.log('error  with push' + error);
+    })
+   
   }
 
   openPage(page) {
@@ -132,12 +194,14 @@ contactUsPage(){
 }
 logoutByEmail(){
 this.restApi.logout().then((result)=>{
-  this.nativeStorage.clear();
+  localStorage.clear();
   console.log(result)
   this.nav.push(LoginPage)
 },(err)=>{
   console.log(err)
 })
+
+this.nav.push(LoginPage)
 }
 listPage(){
   this.nav.push(ListPage);

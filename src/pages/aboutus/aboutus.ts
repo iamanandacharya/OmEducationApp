@@ -73,13 +73,13 @@ dataValue:any;
     
     */
  //   call api
-    this.http.get('https://api.github.com/users/seeschweiler')
+    this.http.get('http://localhost:8080/Elearn/rest/course/getAllCourse')
     
     .subscribe(data => {
       //data are formate in json
       this.users = data.json();
-      //user object is converted in array
-      this.users = Array.of(this.users);
+      //if json object is converted in array in backend then object is converted in array onn front side
+     // this.users = Array.of(this.users);
       console.log(data);
     }, err=>{
       console.log(err)

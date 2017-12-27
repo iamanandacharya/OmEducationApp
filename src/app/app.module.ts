@@ -48,7 +48,8 @@ import { ReviewPageFormPage } from '../pages/review-page-form/review-page-form';
 import { Ionic2RatingModule } from 'ionic2-rating';
 
 import { StreamingMedia } from '@ionic-native/streaming-media';
-
+//ionic push notification add plugin
+import {Push,PushObject,PushOptions} from "@ionic-native/push"
 //Rest api Provider and call http
 import { RestApiUrlCallProvider } from '../providers/rest-api-url-call/rest-api-url-call';
 import {HttpModule} from "@angular/http"
@@ -131,6 +132,7 @@ import { HttpGenerateProvider } from '../providers/http-generate/http-generate';
     HTTP,
     EmailComposer,
     StreamingMedia,
+    Push,
     
     
    
