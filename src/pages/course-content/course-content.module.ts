@@ -11,5 +11,8 @@ import { Ionic2RatingModule } from 'ionic2-rating';
     IonicPageModule.forChild(CourseContentPage),
     Ionic2RatingModule
   ],
+  exports:[
+    Ionic2RatingModule
+  ],
 })
 export class CourseContentPageModule {}
