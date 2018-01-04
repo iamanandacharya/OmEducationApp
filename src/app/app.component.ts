@@ -38,6 +38,10 @@ import { Header } from 'ionic-angular/components/toolbar/toolbar-header';
 //ionic push notification add plugin
 import {Push,PushObject,PushOptions} from "@ionic-native/push"
 
+//add one signal plugin
+
+import {OneSignal} from '@ionic-native/onesignal';
+
 @Component({
   templateUrl: 'app.html'
 })
@@ -58,6 +62,7 @@ export class MyApp {
     public splashScreen: SplashScreen,
     public push:Push,
     public alertController:AlertController,
+    public onesignal:OneSignal
   ) {
 //    this.initializeApp();
 this.platform.ready().then(() =>{
@@ -67,7 +72,25 @@ this.platform.ready().then(() =>{
 
   let env = this;
   let navCtrl = this.nav
+  let oneSignalId = 'a5ce2de2-4dd8-4f06-b62d-92cad7932d97'
+  let fcmAppId = '456110808227'
   
+//one signal push application
+this.onesignal.startInit(oneSignalId, fcmAppId)
+this.onesignal.inFocusDisplaying(this.onesignal.OSInFocusDisplayOption.Notification);
+this.onesignal.setSubscription(true);
+this.onesignal.handleNotificationReceived().subscribe(()=>{
+  // your code after Notification received.
+  
+});
+this.onesignal.handleNotificationOpened().subscribe(() => {
+//you can handle when notification open
+this.nav.push(ProfilePage)
+});
+this.onesignal.endInit();
+
+
+  //for google silent login
   this.google.trySilentLogin({
     'scopes':'',
     'webClientId':'',
@@ -112,6 +135,8 @@ this.platform.ready().then(() =>{
    
   //   .catch(err =>console.log(err))
   // }
+
+  //ionic push notification method
   initPushNotification(){
     
     const options: PushOptions = {

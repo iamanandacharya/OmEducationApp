@@ -73,7 +73,7 @@ dataValue:any;
     
     */
  //   call api
-    this.http.get('http://localhost:8080/Elearn/rest/course/getAllCourse')
+    this.http.get('http://localhost:8080/Elearn/rest/category/editCategory/1')
     
     .subscribe(data => {
       //data are formate in json

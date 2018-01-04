@@ -26,7 +26,9 @@
                   
                                             <img src="assets/imgs/images.jpg"/>
                                             <div class="card-title"><button ion-button clear (click)="itCourceList()">
-                                              <div id="IT_text_id">IT</div>
+                                              <div id="IT_text_id" *ngFor="let user of users">
+                                                {{user.category_name}}
+                                              </div>
                                             </button> 
                                           </div>
                                           </ion-card>
@@ -37,7 +39,9 @@
                 
                                           <img src="assets/imgs/images.jpg"/>
                                           <div class="card-title"><button ion-button clear (click)="itCourceList()">
-                                              <div id="IT_text_id">Business</div>
+                                              <div id="IT_text_id" *ngFor="let user of users2">
+                                                {{user.category_name}}
+                                              </div>
                                             </button> 
                                             </div>
                                         </ion-card>

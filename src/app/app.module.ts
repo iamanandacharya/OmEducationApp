@@ -55,6 +55,7 @@ import { RestApiUrlCallProvider } from '../providers/rest-api-url-call/rest-api-
 import {HttpModule} from "@angular/http"
 import { HttpGenerateProvider } from '../providers/http-generate/http-generate';
 
+import {OneSignal} from '@ionic-native/onesignal';
 
 @NgModule({
   declarations: [
@@ -133,6 +134,7 @@ import { HttpGenerateProvider } from '../providers/http-generate/http-generate';
     EmailComposer,
     StreamingMedia,
     Push,
+    OneSignal,
     
     
    

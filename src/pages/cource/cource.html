@@ -18,7 +18,11 @@
       <img src="assets/imgs/github-mark.png">
     
       <ion-card-content>
-        <h1>Github Webhooks For Beginners</h1>
+      <h1>
+        <div *ngFor="let user of users">
+          {{user.course_name}}
+        </div>
+      </h1>
         <p>Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine... out of a DeLorean?! Whoa. This is heavy.</p>
       </ion-card-content>
     
