@@ -14,7 +14,7 @@ import {Http,Response,Headers} from '@angular/http'
 
 let url = 'http://localhost:8080/Elearn/rest/category/editCategory/2';
 let url2 = 'http://localhost:8080/Elearn/rest/category/editCategory/3'
-@IonicPage()
+
 @Component({
   selector: 'page-coursecategory',
   templateUrl: 'coursecategory.html',
@@ -44,6 +44,6 @@ export class CoursecategoryPage {
     
   }
   itCourceList(){
-    this.navCtrl.push(CourcePage)
+    this.navCtrl.push('CourcePage')
   }
 }

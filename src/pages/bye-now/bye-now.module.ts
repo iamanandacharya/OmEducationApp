@@ -9,5 +9,11 @@ import { ByeNowPage } from './bye-now';
   imports: [
     IonicPageModule.forChild(ByeNowPage),
   ],
+  exports:[
+    ByeNowPage,
+  ],
+  entryComponents:[
+    ByeNowPage
+  ]
 })
 export class ByeNowPageModule {}

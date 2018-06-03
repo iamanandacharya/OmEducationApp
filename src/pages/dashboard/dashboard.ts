@@ -16,7 +16,6 @@ import { StudentCourseListPage } from '../student-course-list/student-course-lis
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-
 @IonicPage()
 @Component({
   selector: 'page-dashboard',
@@ -41,15 +40,15 @@ export class DashboardPage {
     console.log('ionViewDidLoad DashboardPage');
   }
   menuClick($event){
-    this.navCtrl.push(MenuPage);
+    this.navCtrl.push('MenuPage');
   }
   openProfile(){
-    this.navCtrl.push(ProfilePage)
+    this.navCtrl.push('ProfilePage')
   }
   onHome(){
-    this.navCtrl.push(DashboardPage)
+    this.navCtrl.push('DashboardPage')
   }
   openAllCources(){
-    this.navCtrl.push(StudentCourseListPage)
+    this.navCtrl.push('StudentCourseListPage')
   }
 }

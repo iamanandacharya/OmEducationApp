@@ -19,7 +19,6 @@ import { ReviewPageFormPage } from '../review-page-form/review-page-form';
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-
 @IonicPage()
 @Component({
   selector: 'page-course-content',
@@ -52,10 +51,10 @@ export class CourseContentPage {
       this.youtubePlayer.openVideo(video_id);
   }
   byeNow(){
-    this.navCtrl.push(ByeNowPage)
+    this.navCtrl.push('ByeNowPage')
   }
   addToCart(){
-    this.navCtrl.push(AddtocartPage);
+    this.navCtrl.push('AddtocartPage');
   }
   //call one event from two button
   addToWishlist(){
@@ -63,7 +62,7 @@ export class CourseContentPage {
    this.add_wish = !this.add_wish;
   }
   onModelChange($event){
-    this.navCtrl.push(ReviewPageFormPage)
+    this.navCtrl.push('ReviewPageFormPage')
   }
   postReview(){
     this.reviewTextArea;

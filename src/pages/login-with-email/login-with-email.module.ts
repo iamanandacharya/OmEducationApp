@@ -9,5 +9,12 @@ import { LoginWithEmailPage } from './login-with-email';
   imports: [
     IonicPageModule.forChild(LoginWithEmailPage),
   ],
+  exports: [
+    LoginWithEmailPage,
+  ],
+  entryComponents:[
+    LoginWithEmailPage
+  ]
+
 })
 export class LoginWithEmailPageModule {}

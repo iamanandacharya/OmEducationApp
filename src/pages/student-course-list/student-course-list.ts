@@ -8,12 +8,12 @@ import { CourseOverviewPage } from '../course-overview/course-overview';
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-
 @IonicPage()
 @Component({
   selector: 'page-student-course-list',
   templateUrl: 'student-course-list.html',
 })
+
 export class StudentCourseListPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
@@ -23,6 +23,6 @@ export class StudentCourseListPage {
     console.log('ionViewDidLoad StudentCourseListPage');
   }
   goToCourse(){
-    this.navCtrl.push(CourseOverviewPage)
+    this.navCtrl.push('CourseOverviewPage')
   }
 }

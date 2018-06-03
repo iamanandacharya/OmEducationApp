@@ -12,8 +12,11 @@ import {MenuPage} from '../menu/menu'
 import {MapPage} from '../map/map'
 import { CourcePage } from '../cource/cource';
 
+import {IonicPage} from 'ionic-angular';
+
 //added google variable in somewhere in ionic framework by ionic tem
 declare var google;
+@IonicPage()
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -76,19 +79,19 @@ export class HomePage {
     
     }
   locationMethod(){
-    this.navCtrl.push(MapPage);
+    this.navCtrl.push('MapPage');
   }
   menuClick($event){
-    this.navCtrl.push(MenuPage);
+    this.navCtrl.push('MenuPage');
   }
   valueOffer($event){
 
   }
   doLogin(){
-    this.navCtrl.push(LoginPage)
+    this.navCtrl.push('LoginPage')
   }
   itCourceList(){
-    this.navCtrl.push(CourcePage)
+    this.navCtrl.push('CourcePage')
   }
   /*this method is for getting current location and display marker 
    it is useful when we want to  display current location of user,compony and office 

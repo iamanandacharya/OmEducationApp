@@ -38,9 +38,9 @@ export class CourcePage {
     this.like_count++;
   }
   goToCourse(){
-this.navCtrl.push(CourseContentPage)
+this.navCtrl.push('CourseContentPage')
   }
   onModelChange($event){
-    this.navCtrl.push(CourseContentPage)
+    this.navCtrl.push('CourseContentPage')
   }
 }

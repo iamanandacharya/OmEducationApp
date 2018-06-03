@@ -69,5 +69,15 @@
         
         <h2>Grand Total: {{total_price}} Rs.</h2>
         <button ion-button block color="danger" (click)="paymnetMethod()">Checkout</button>
+
+        <button ion-button id="buttonId" (click)="addClick($event)">Click Here</button>
+
+        <!-- add button and apply condition
+        when user click button on that time below button will display
+        default is false.
+        -->
+        <button ion-button *ngIf="buttonClick" id="ButtonOne">{{buttonClickNumber}}</button>
+       
+    
         
 </ion-content>

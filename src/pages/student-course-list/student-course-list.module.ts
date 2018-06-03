@@ -9,5 +9,12 @@ import { StudentCourseListPage } from './student-course-list';
   imports: [
     IonicPageModule.forChild(StudentCourseListPage),
   ],
+  exports:[
+    StudentCourseListPage,
+  ],
+  entryComponents:[
+    StudentCourseListPage
+  ]
+
 })
 export class StudentCourseListPageModule {}

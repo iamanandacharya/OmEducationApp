@@ -8,7 +8,6 @@ import { CourseOverviewPage } from '../course-overview/course-overview';
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-
 @IonicPage()
 @Component({
   selector: 'page-add-visa-card-details',
@@ -23,7 +22,7 @@ export class AddVisaCardDetailsPage {
     console.log('ionViewDidLoad AddVisaCardDetailsPage');
   }
   makePayment(){
-    this.navCtrl.push(CourseOverviewPage)
+    this.navCtrl.push('CourseOverviewPage')
   }
   register(){
     

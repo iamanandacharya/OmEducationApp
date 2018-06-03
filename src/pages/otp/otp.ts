@@ -10,11 +10,11 @@ import {LoginPage} from '../login/login'
  * Ionic pages and navigation.
  */
 
-@IonicPage()
 @Component({
   selector: 'page-otp',
   templateUrl: 'otp.html',
 })
+
 export class OtpPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
@@ -24,7 +24,7 @@ export class OtpPage {
     console.log('ionViewDidLoad OtpPage');
   }
   dootp($event){
-    this.navCtrl.setRoot(HomePage);
+    this.navCtrl.setRoot('HomePage');
   }
   onBack($event){
     this.navCtrl.pop();

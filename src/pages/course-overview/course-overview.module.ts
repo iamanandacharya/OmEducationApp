@@ -9,5 +9,11 @@ import { CourseOverviewPage } from './course-overview';
   imports: [
     IonicPageModule.forChild(CourseOverviewPage),
   ],
+  exports:[
+    CourseOverviewPage,
+  ],
+  entryComponents:[
+    CourseOverviewPage
+  ]
 })
 export class CourseOverviewPageModule {}

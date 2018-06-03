@@ -9,5 +9,12 @@ import { MapPage } from './map';
   imports: [
     IonicPageModule.forChild(MapPage),
   ],
+  exports:[
+    MapPage,
+  ],
+  entryComponents:[
+    MapPage
+  ]
+  
 })
 export class MapPageModule {}

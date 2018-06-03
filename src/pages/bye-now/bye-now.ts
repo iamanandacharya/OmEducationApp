@@ -28,7 +28,7 @@ export class ByeNowPage {
     this.bank =true;
   }
   selectPayMethod(){
-    this.navCtrl.push(AddVisaCardDetailsPage)
+    this.navCtrl.push('AddVisaCardDetailsPage')
   }
  
   clickOption2(){

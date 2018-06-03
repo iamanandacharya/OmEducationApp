@@ -9,5 +9,11 @@ import { AddtocartPage } from './addtocart';
   imports: [
     IonicPageModule.forChild(AddtocartPage),
   ],
+  exports:[
+    AddtocartPage,
+  ],
+  entryComponents:[
+    AddtocartPage
+  ]
 })
 export class AddtocartPageModule {}

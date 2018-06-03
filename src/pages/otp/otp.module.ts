@@ -9,6 +9,13 @@ import { OtpPage } from './otp';
   imports: [
     IonicPageModule.forChild(OtpPage),
   ],
+  exports:[
+    OtpPage
+  ],
+  entryComponents:[
+    OtpPage
+  ]
+
 })
 export class OtpPageModule {
   

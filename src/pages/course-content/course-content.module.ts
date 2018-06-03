@@ -9,10 +9,15 @@ import { Ionic2RatingModule } from 'ionic2-rating';
   ],
   imports: [
     IonicPageModule.forChild(CourseContentPage),
+    //use lazy module for rating compoment thats why Ionic2rating import in here
     Ionic2RatingModule
   ],
   exports:[
-    Ionic2RatingModule
+    Ionic2RatingModule,
+    CourseContentPage,
   ],
+  entryComponents:[
+    CourseContentPage
+  ]
 })
 export class CourseContentPageModule {}

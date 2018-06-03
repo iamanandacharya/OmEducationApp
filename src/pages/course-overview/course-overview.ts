@@ -13,7 +13,6 @@ import { DomSanitizer } from '@angular/platform-browser';
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-
 @IonicPage()
 @Component({
   selector: 'page-course-overview',
@@ -61,7 +60,7 @@ export class CourseOverviewPage {
       this.youtubePlayer.openVideo(video_id);
   }
   playCourse(){
-    this.navCtrl.push(CourseContentPage)
+    this.navCtrl.push('CourseContentPage')
   }
   openVideo(){
     let options:StreamingVideoOptions = {

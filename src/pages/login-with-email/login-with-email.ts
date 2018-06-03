@@ -12,7 +12,6 @@ import { DashboardPage } from '../dashboard/dashboard';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
 @Component({
   selector: 'page-login-with-email',
   templateUrl: 'login-with-email.html',

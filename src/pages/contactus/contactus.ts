@@ -12,7 +12,6 @@ import {FormGroup,FormControl,FormBuilder,Validators} from '@angular/forms';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
 @Component({
   selector: 'page-contactus',
   templateUrl: 'contactus.html',

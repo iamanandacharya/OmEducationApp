@@ -8,6 +8,7 @@ import { CoursecategoryPage } from './coursecategory';
   ],
   imports: [
     IonicPageModule.forChild(CoursecategoryPage),
-  ],
+  ]
+
 })
 export class CoursecategoryPageModule {}

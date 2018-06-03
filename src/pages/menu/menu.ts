@@ -15,12 +15,12 @@ import {SubmenuPage} from '../submenu/submenu'
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-
 @IonicPage()
 @Component({
   selector: 'page-menu',
   templateUrl: 'menu.html',
 })
+
 export class MenuPage {
  
   @ViewChild(Slides) slides:Slides;
@@ -30,9 +30,9 @@ export class MenuPage {
   constructor(public navCtrl: NavController, public navParams: NavParams,public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     
     this.page = [
-      { title: 'HomeMenu', component: HomePage },
-      { title: 'ListMenu', component: ListPage },
-      {title:'Logout' , component:LoginPage}
+      { title: 'HomeMenu', component: 'HomePage' },
+      { title: 'ListMenu', component: 'ListPage' },
+      {title:'Logout' , component:'LoginPage'}
     ];
     this.LoginPage=LoginPage;
   }
@@ -52,7 +52,7 @@ export class MenuPage {
 
 
   openPizzaMenu(){
-    this.navCtrl.push(SubmenuPage);
+    this.navCtrl.push('SubmenuPage');
   }
 
 }

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
 import { RestApiUrlCallProvider } from '../../providers/rest-api-url-call/rest-api-url-call';
+import { IonicPage } from 'ionic-angular/navigation/ionic-page';
 
 @Component({
   selector: 'page-list',

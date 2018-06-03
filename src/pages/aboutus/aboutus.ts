@@ -11,7 +11,6 @@ import { Http,Response,Headers } from '@angular/http';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
 @Component({
   selector: 'page-aboutus',
   templateUrl: 'aboutus.html',

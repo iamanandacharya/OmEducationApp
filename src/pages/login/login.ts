@@ -27,9 +27,11 @@ import { Injectable } from '@angular/core';
 import { Http,Response,Headers } from '@angular/http';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/do';
+import { IonicPage } from 'ionic-angular/navigation/ionic-page';
 
 
 let apiUrl:string = 'http://localhost:8080/Elearn/rest/user/';
+@IonicPage()
 @Component ({
     selector:'login-page',
     templateUrl:'login.html'
@@ -66,9 +68,11 @@ export class LoginPage{
     })
 .catch(e=>console.log(e));
 }
+
+//true caller page navigation going to dashbord page
     trueCaller($event){
         console.log(event)
-        this.navCtrl.setRoot(DashboardPage);
+        this.navCtrl.setRoot('DashboardPage');
     }
     public loginform = this.fb.group({
         number: ["", Validators.required,
@@ -105,10 +109,10 @@ export class LoginPage{
          
       }
       browseCource(){
-        this.navCtrl.push(HomePage);            
+        this.navCtrl.push('HomePage');            
      }
      doSign(){
-         this.navCtrl.push(SignupPage);
+         this.navCtrl.push('SignupPage');
      }
      
 
@@ -135,7 +139,7 @@ export class LoginPage{
     .then(res => {
         console.log(res);
         this.users = res;
-        this.navCtrl.setRoot(DashboardPage);
+        this.navCtrl.setRoot('DashboardPage');
         
     })
     .catch(e => {
@@ -164,7 +168,7 @@ export class LoginPage{
           
           .then(function(){
               console.log(user);
-              navCtrl.setRoot(DashboardPage)
+              navCtrl.setRoot('DashboardPage')
             }),  
           function(error){
               console.log(error)
@@ -186,9 +190,9 @@ export class LoginPage{
         this.responseData = result;        
             console.log(this.responseData);
             localStorage.setItem('loginData',this.responseData.access_token);
-            localStorage.getItem('loginData'); 
+            
         })
-    this.navCtrl.setRoot(DashboardPage);
+    this.navCtrl.setRoot('DashboardPage');
 
      // use post method for call api and send OTP
     //   this.http.post("http://localhost:8080/Elearn/rest/user/login",this.loginData,headers).then((res:HTTPResponse) =>{
@@ -207,7 +211,10 @@ export class LoginPage{
       }
 
   profile(){
-    this.navCtrl.push(ProfilePage)
+    this.navCtrl.push('ProfilePage')
+  }
+  addToCart(){
+      this.navCtrl.push('AddtocartPage')
   }
     }
    

@@ -13,7 +13,6 @@ declare var google;
  * Ionic pages and navigation.
  */
 
-@IonicPage()
 @Component({
   selector: 'page-map',
   templateUrl: 'map.html',

@@ -8,6 +8,6 @@ import { ContactusPage } from './contactus';
   ],
   imports: [
     IonicPageModule.forChild(ContactusPage),
-  ],
+  ]
 })
 export class ContactusPageModule {}

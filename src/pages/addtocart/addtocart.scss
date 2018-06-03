@@ -1,3 +1,16 @@
 page-addtocart {
-
+    #boxId{
+        width: 10rem;
+        height: 10rem;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top :383px;
+        border: 1px solid #777
+      }
+      
+      .absolute-center {
+        margin: auto;
+        position: absolute;
+        top: 0; left: 0; bottom: 0; right: 0; 
+      }
 }

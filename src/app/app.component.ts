@@ -16,7 +16,6 @@ import { CourseContentPage } from '../pages/course-content/course-content';
 
 import { CourcePage } from '../pages/cource/cource';
 import {SignupPage} from '../pages/signup/signup'
-import {ProfilePage} from '../pages/profile/profile'
 import {DashboardPage} from '../pages/dashboard/dashboard'
 
 import { AboutusPage } from '../pages/aboutus/aboutus';
@@ -49,7 +48,7 @@ export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   public isLoggedIn:any;
-  rootPage: any = LoginPage;
+  rootPage: any = 'LoginPage';
 
   pages: Array<{title: string, component: any}>;
 
@@ -85,7 +84,7 @@ this.onesignal.handleNotificationReceived().subscribe(()=>{
 });
 this.onesignal.handleNotificationOpened().subscribe(() => {
 //you can handle when notification open
-this.nav.push(ProfilePage)
+this.nav.push(HomePage)
 });
 this.onesignal.endInit();
 
@@ -205,9 +204,7 @@ this.onesignal.endInit();
         console.log(error);
     }
 )}
-profilePage(){
-  this.nav.push(ProfilePage)
-}
+
 courcePage(){
   this.nav.push(CoursecategoryPage)
 }

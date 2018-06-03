@@ -17,7 +17,6 @@ import { Header } from 'ionic-angular/components/toolbar/toolbar-header';
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-
 @IonicPage()
 @Component({
   selector: 'page-signup',

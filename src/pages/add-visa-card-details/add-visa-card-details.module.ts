@@ -9,5 +9,12 @@ import { AddVisaCardDetailsPage } from './add-visa-card-details';
   imports: [
     IonicPageModule.forChild(AddVisaCardDetailsPage),
   ],
+  exports:[
+    AddVisaCardDetailsPage,
+  ],
+  entryComponents:[
+    AddVisaCardDetailsPage
+  ]
+
 })
 export class AddVisaCardDetailsPageModule {}

@@ -9,7 +9,6 @@ import {Slides} from 'ionic-angular';
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-
 @IonicPage()
 @Component({
   selector: 'page-profile',
@@ -34,6 +33,7 @@ export class ProfilePage {
   slideChanged(){
     this.slides.slideNext(1100,false);
   }
+  //image import from gallery
   selectedFromGallery(){
 
     let options: CameraOptions = {
@@ -55,7 +55,7 @@ export class ProfilePage {
         });
 
   }
-
+//image import from camera
   openCamera(){
     let options: CameraOptions={
       quality:75,

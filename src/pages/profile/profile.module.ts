@@ -9,5 +9,11 @@ import { ProfilePage } from './profile';
   imports: [
     IonicPageModule.forChild(ProfilePage),
   ],
+  exports:[
+    ProfilePage,
+  ],
+  entryComponents:[
+    ProfilePage,
+  ]
 })
 export class ProfilePageModule {}

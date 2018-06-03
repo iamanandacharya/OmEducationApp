@@ -9,5 +9,11 @@ import { SubmenuPage } from './submenu';
   imports: [
     IonicPageModule.forChild(SubmenuPage),
   ],
+  exports:[
+    SubmenuPage,
+  ],
+  entryComponents:[
+    SubmenuPage
+  ]
 })
 export class SubmenuPageModule {}
